@@ -56,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DBContext.cs" />
+    <Compile Include="forms\Committefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Committefrm.Designer.cs">
+      <DependentUpon>Committefrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\MtypeFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     <Compile Include="Models\OLS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\Committefrm.resx">
+      <DependentUpon>Committefrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\MtypeFrm.resx">
       <DependentUpon>MtypeFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +118,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SCMembersystem.Models.Committe.datasource" />
     <None Include="SCMembersystem.Models.Mtype.datasource" />
   </ItemGroup>
   <ItemGroup>

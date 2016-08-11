@@ -59,10 +59,12 @@
             this.costDataGridViewTextBoxColumn,
             this.hoursDataGridViewTextBoxColumn});
             this.MtypesdataGridView.DataSource = this.mtypeBindingSource;
-            this.MtypesdataGridView.Location = new System.Drawing.Point(92, 12);
+            this.MtypesdataGridView.Location = new System.Drawing.Point(86, 42);
             this.MtypesdataGridView.Name = "MtypesdataGridView";
             this.MtypesdataGridView.Size = new System.Drawing.Size(736, 189);
             this.MtypesdataGridView.TabIndex = 1;
+            this.MtypesdataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.MtypesdataGridView_CellEndEdit);
+            this.MtypesdataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.MtypesdataGridView_UserDeletingRow);
             // 
             // Id
             // 
@@ -122,7 +124,7 @@
             // costUpDown
             // 
             this.costUpDown.DecimalPlaces = 2;
-            this.costUpDown.Location = new System.Drawing.Point(168, 328);
+            this.costUpDown.Location = new System.Drawing.Point(168, 329);
             this.costUpDown.Name = "costUpDown";
             this.costUpDown.Size = new System.Drawing.Size(120, 20);
             this.costUpDown.TabIndex = 6;
@@ -136,12 +138,13 @@
             // 
             // addbut
             // 
-            this.addbut.Location = new System.Drawing.Point(168, 444);
+            this.addbut.Location = new System.Drawing.Point(168, 430);
             this.addbut.Name = "addbut";
-            this.addbut.Size = new System.Drawing.Size(75, 23);
+            this.addbut.Size = new System.Drawing.Size(75, 37);
             this.addbut.TabIndex = 8;
             this.addbut.Text = "Add";
             this.addbut.UseVisualStyleBackColor = true;
+            this.addbut.Click += new System.EventHandler(this.addbut_Click);
             // 
             // label3
             // 

@@ -12,54 +12,49 @@ using SCMembersystem.Models;
 
 namespace SCMembersystem.forms
 {
-    public partial class mtypefrm : Form
+    public partial class Committefrm : Form
     {
-        public mtypefrm()
+        public Committefrm()
         {
             InitializeComponent();
         }
 
-        private void mtypefrm_Load(object sender, EventArgs e)
+        private void Committefrm_Load(object sender, EventArgs e)
         {
             GetLists();
         }
-
 
         private void GetLists()
         {
             using (var context = new DBContext())
             {
-                mtypeBindingSource.DataSource = context.Mtypes 
-                    
+                committeBindingSource.DataSource = context.Committes
+
                     .OrderBy(e => e.name)
                     .ToList();
-                
+
             }
         }
-
         private void addbut_Click(object sender, EventArgs e)
         {
-            var hour = hoursUpDown.Value;
-            var cost = costUpDown.Value;
             var name = nametxt.Text;
 
-   var sale = new Mtype()
+
+            var sale = new Committe()
             {
-              
-           hours=(int) hour,
-                cost = cost,
-                name=name
+                name = name
             };
             using (var context = new DBContext())
             {
-                context.Mtypes.Add(sale);
+                context.Committes.Add(sale);
                 context.SaveChanges();
             }
             GetLists();
         }
 
-        private void MtypesdataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        private void CommittedataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
+
             if (MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 e.Cancel = true;
@@ -71,38 +66,34 @@ namespace SCMembersystem.forms
 
 
             var context = new DBContext();
-            var sale = context.Mtypes.SingleOrDefault(p => p.Id == saleid);
+            var sale = context.Committes.SingleOrDefault(p => p.Id == saleid);
 
             if (sale != null)
             {
-                context.Mtypes.Remove(sale);
+                context.Committes.Remove(sale);
                 context.SaveChanges();
                 GetLists();
             }
-
         }
 
-        private void MtypesdataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void CommittedataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex > 0)
             {
-                var saleid = (int) MtypesdataGridView.Rows[e.RowIndex].Cells[0].Value;
-                var name = (string) MtypesdataGridView.Rows[e.RowIndex].Cells[1].Value;
-                var cost = (decimal) MtypesdataGridView.Rows[e.RowIndex].Cells[2].Value;
-                var hours = (int) MtypesdataGridView.Rows[e.RowIndex].Cells[3].Value;
-
+                var saleid = (int)CommittedataGridView.Rows[e.RowIndex].Cells[0].Value;
+                var name = (string)CommittedataGridView.Rows[e.RowIndex].Cells[1].Value;
+                
                 var context = new DBContext();
-                var sale = context.Mtypes.SingleOrDefault(p => p.Id == saleid);
+                var sale = context.Committes.SingleOrDefault(p => p.Id == saleid);
 
                 if (sale != null)
                 {
-                    sale.name=name;
-                    sale.cost = cost;
-                    sale.hours = hours;
+                    sale.name = name;
                     context.SaveChanges();
                     GetLists();
                 }
             }
         }
     }
+    
 }
