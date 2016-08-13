@@ -44,6 +44,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -119,6 +120,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="SCMembersystem.Models.Committe.datasource" />
+    <None Include="SCMembersystem.Models.Member.datasource" />
     <None Include="SCMembersystem.Models.Mtype.datasource" />
   </ItemGroup>
   <ItemGroup>
