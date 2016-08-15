@@ -88,11 +88,13 @@
             this.huntingcheckBox = new System.Windows.Forms.CheckBox();
             this.goalcheckBox = new System.Windows.Forms.CheckBox();
             this.nracheckBox = new System.Windows.Forms.CheckBox();
+            this.mtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.membersdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoursnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountnumericUpDown)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // membersdataGridView
@@ -112,7 +114,7 @@
             this.phoneDataGridViewTextBoxColumn,
             this.hours});
             this.membersdataGridView.DataSource = this.memberBindingSource;
-            this.membersdataGridView.Location = new System.Drawing.Point(12, 64);
+            this.membersdataGridView.Location = new System.Drawing.Point(25, 61);
             this.membersdataGridView.Name = "membersdataGridView";
             this.membersdataGridView.ReadOnly = true;
             this.membersdataGridView.Size = new System.Drawing.Size(887, 229);
@@ -379,12 +381,18 @@
             // 
             // mtypcomboBox
             // 
+            this.mtypcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.mtypeBindingSource, "Id", true));
+            this.mtypcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mtypeBindingSource, "name", true));
+            this.mtypcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.mtypeBindingSource, "Id", true));
+            this.mtypcomboBox.DataSource = this.mtypeBindingSource;
+            this.mtypcomboBox.DisplayMember = "name";
             this.mtypcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mtypcomboBox.FormattingEnabled = true;
             this.mtypcomboBox.Location = new System.Drawing.Point(371, 311);
             this.mtypcomboBox.Name = "mtypcomboBox";
             this.mtypcomboBox.Size = new System.Drawing.Size(121, 21);
             this.mtypcomboBox.TabIndex = 21;
+            this.mtypcomboBox.SelectedIndexChanged += new System.EventHandler(this.mtypcomboBox_SelectedIndexChanged);
             // 
             // firsttxt
             // 
@@ -472,7 +480,7 @@
             // 
             // joindateTimePicker
             // 
-            this.joindateTimePicker.Location = new System.Drawing.Point(647, 373);
+            this.joindateTimePicker.Location = new System.Drawing.Point(626, 370);
             this.joindateTimePicker.Name = "joindateTimePicker";
             this.joindateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.joindateTimePicker.TabIndex = 34;
@@ -608,6 +616,10 @@
             this.nracheckBox.UseVisualStyleBackColor = true;
             this.nracheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // mtypeBindingSource
+            // 
+            this.mtypeBindingSource.DataSource = typeof(SCMembersystem.Models.Mtype);
+            // 
             // mainfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -671,6 +683,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.amountnumericUpDown)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -737,6 +750,7 @@
         private System.Windows.Forms.CheckBox huntingcheckBox;
         private System.Windows.Forms.CheckBox goalcheckBox;
         private System.Windows.Forms.CheckBox nracheckBox;
+        private System.Windows.Forms.BindingSource mtypeBindingSource;
     }
 }
 
