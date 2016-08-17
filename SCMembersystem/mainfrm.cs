@@ -21,6 +21,20 @@ namespace SCMembersystem
             InitializeComponent();
         }
 
+        private void Getmtypes()
+        {
+            using (var context = new DBContext())
+            {
+
+
+                mtypeBindingSource.DataSource = context.Mtypes
+                 
+                    .OrderBy(e => e.name)
+                    
+                    .ToList();
+            }
+        }
+
         private void GetMembers(string lname = "")
         {
             if (lname == "")
@@ -47,6 +61,7 @@ namespace SCMembersystem
 
                 }
             }
+            Getmtypes();
         }
 
         private void loadmember()
@@ -103,11 +118,6 @@ namespace SCMembersystem
             currMember.goal = goalcheckBox.Checked;
             currMember.nra = nracheckBox.Checked;
             currMember.Id = currid;
-        }
-
-        private void membersdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void searchtxt_TextChanged(object sender, EventArgs e)
@@ -186,6 +196,79 @@ namespace SCMembersystem
         private void mtypcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void membersdataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            var row = e.RowIndex;
+            currid = (int)membersdataGridView.Rows[row].Cells[0].Value;
+            using (var context = new DBContext())
+            {
+                currMember = context.Members.SingleOrDefault(r => r.Id == currid);
+
+
+            }
+
+            if (currMember != null)
+            {
+                loadmember();
+            }
+
+
+
+
+        }
+
+        private void addbut_Click(object sender, EventArgs e)
+        {
+            currid = 0;
+            currMember= new Member();
+            loadmember();
+            using (var context = new DBContext() )
+            {
+                currid = context.Members.Add(currMember).Id;
+                context.SaveChanges();
+            }
+        }
+
+        private void deletebut_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+             //   e.Cancel = true;
+                return;
+
+            }
+
+            var memberid = currid;
+
+
+            var context = new DBContext();
+            var member = context.Members.SingleOrDefault(p => p.Id == memberid);
+
+            if (member != null)
+            {
+                context.Members.Remove(member);
+                context.SaveChanges();
+                GetMembers("");
+                currid = 0;
+                currMember=new Member();
+                loadmember();
+                searchtxt.Text = "";
+
+            }
+        }
+
+        private void savebut_Click(object sender, EventArgs e)
+        {
+            var context=new DBContext();
+            currMember = context.Members.SingleOrDefault(r => r.Id == currid);
+            if (currMember != null)
+            {
+                savemember();
+                context.SaveChanges();
+                GetMembers();
+            }
         }
     }
 }

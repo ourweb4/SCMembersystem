@@ -1,4 +1,17 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : SCMembersystem
+// Author           : Bill Banks - office@ourweb.net
+// Created          : 08-10-2016
+//
+// Last Modified By : Bill Banks - office@ourweb.net
+// Last Modified On : 08-10-2016
+// ***********************************************************************
+// <copyright file="Committefrm.cs" company="Ourweb.net  --  508-829-2005">
+//     Copyright ©  2016
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +25,33 @@ using SCMembersystem.Models;
 
 namespace SCMembersystem.forms
 {
+    /// <summary>
+    /// Class Committefrm.
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class Committefrm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Committefrm"/> class.
+        /// </summary>
         public Committefrm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles the Load event of the Committefrm control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void Committefrm_Load(object sender, EventArgs e)
         {
             GetLists();
         }
 
+        /// <summary>
+        /// Gets the lists.
+        /// </summary>
         private void GetLists()
         {
             using (var context = new DBContext())
@@ -35,6 +63,11 @@ namespace SCMembersystem.forms
 
             }
         }
+        /// <summary>
+        /// Handles the Click event of the addbut control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void addbut_Click(object sender, EventArgs e)
         {
             var name = nametxt.Text;
@@ -52,6 +85,11 @@ namespace SCMembersystem.forms
             GetLists();
         }
 
+        /// <summary>
+        /// Handles the UserDeletingRow event of the CommittedataGridView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DataGridViewRowCancelEventArgs"/> instance containing the event data.</param>
         private void CommittedataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
 
@@ -76,6 +114,11 @@ namespace SCMembersystem.forms
             }
         }
 
+        /// <summary>
+        /// Handles the CellEndEdit event of the CommittedataGridView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DataGridViewCellEventArgs"/> instance containing the event data.</param>
         private void CommittedataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex > 0)

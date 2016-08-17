@@ -61,6 +61,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.mtypcomboBox = new System.Windows.Forms.ComboBox();
+            this.mtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.firsttxt = new System.Windows.Forms.TextBox();
             this.lasttxt = new System.Windows.Forms.TextBox();
             this.emailtxt = new System.Windows.Forms.TextBox();
@@ -88,13 +89,12 @@
             this.huntingcheckBox = new System.Windows.Forms.CheckBox();
             this.goalcheckBox = new System.Windows.Forms.CheckBox();
             this.nracheckBox = new System.Windows.Forms.CheckBox();
-            this.mtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.membersdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoursnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountnumericUpDown)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // membersdataGridView
@@ -114,12 +114,12 @@
             this.phoneDataGridViewTextBoxColumn,
             this.hours});
             this.membersdataGridView.DataSource = this.memberBindingSource;
-            this.membersdataGridView.Location = new System.Drawing.Point(25, 61);
+            this.membersdataGridView.Location = new System.Drawing.Point(12, 76);
             this.membersdataGridView.Name = "membersdataGridView";
             this.membersdataGridView.ReadOnly = true;
             this.membersdataGridView.Size = new System.Drawing.Size(887, 229);
             this.membersdataGridView.TabIndex = 0;
-            this.membersdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.membersdataGridView_CellContentClick);
+            this.membersdataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.membersdataGridView_RowEnter);
             // 
             // Id
             // 
@@ -200,7 +200,7 @@
             // 
             // searchtxt
             // 
-            this.searchtxt.Location = new System.Drawing.Point(142, 35);
+            this.searchtxt.Location = new System.Drawing.Point(142, 39);
             this.searchtxt.Name = "searchtxt";
             this.searchtxt.Size = new System.Drawing.Size(190, 20);
             this.searchtxt.TabIndex = 2;
@@ -394,6 +394,10 @@
             this.mtypcomboBox.TabIndex = 21;
             this.mtypcomboBox.SelectedIndexChanged += new System.EventHandler(this.mtypcomboBox_SelectedIndexChanged);
             // 
+            // mtypeBindingSource
+            // 
+            this.mtypeBindingSource.DataSource = typeof(SCMembersystem.Models.Mtype);
+            // 
             // firsttxt
             // 
             this.firsttxt.Location = new System.Drawing.Point(62, 337);
@@ -514,12 +518,13 @@
             // 
             // addbut
             // 
-            this.addbut.Location = new System.Drawing.Point(196, 594);
+            this.addbut.Location = new System.Drawing.Point(194, 593);
             this.addbut.Name = "addbut";
             this.addbut.Size = new System.Drawing.Size(75, 23);
             this.addbut.TabIndex = 38;
             this.addbut.Text = "Add";
             this.addbut.UseVisualStyleBackColor = true;
+            this.addbut.Click += new System.EventHandler(this.addbut_Click);
             // 
             // savebut
             // 
@@ -529,6 +534,7 @@
             this.savebut.TabIndex = 39;
             this.savebut.Text = "Save";
             this.savebut.UseVisualStyleBackColor = true;
+            this.savebut.Click += new System.EventHandler(this.savebut_Click);
             // 
             // deletebut
             // 
@@ -538,6 +544,7 @@
             this.deletebut.TabIndex = 40;
             this.deletebut.Text = "Delete";
             this.deletebut.UseVisualStyleBackColor = true;
+            this.deletebut.Click += new System.EventHandler(this.deletebut_Click);
             // 
             // fidcheckBox
             // 
@@ -616,10 +623,6 @@
             this.nracheckBox.UseVisualStyleBackColor = true;
             this.nracheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // mtypeBindingSource
-            // 
-            this.mtypeBindingSource.DataSource = typeof(SCMembersystem.Models.Mtype);
-            // 
             // mainfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -679,11 +682,11 @@
             this.Load += new System.EventHandler(this.mainfrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.membersdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoursnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountnumericUpDown)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
