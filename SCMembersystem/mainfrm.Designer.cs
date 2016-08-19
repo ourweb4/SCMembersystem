@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainfrm));
             this.membersdataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,6 +90,15 @@
             this.huntingcheckBox = new System.Windows.Forms.CheckBox();
             this.goalcheckBox = new System.Windows.Forms.CheckBox();
             this.nracheckBox = new System.Windows.Forms.CheckBox();
+            this.invoicesbut = new System.Windows.Forms.Button();
+            this.paybut = new System.Windows.Forms.Button();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ediitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.membershipTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.membersdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
@@ -114,7 +124,7 @@
             this.phoneDataGridViewTextBoxColumn,
             this.hours});
             this.membersdataGridView.DataSource = this.memberBindingSource;
-            this.membersdataGridView.Location = new System.Drawing.Point(12, 76);
+            this.membersdataGridView.Location = new System.Drawing.Point(28, 65);
             this.membersdataGridView.Name = "membersdataGridView";
             this.membersdataGridView.ReadOnly = true;
             this.membersdataGridView.Size = new System.Drawing.Size(887, 229);
@@ -428,7 +438,7 @@
             // 
             // celltxt
             // 
-            this.celltxt.Location = new System.Drawing.Point(215, 373);
+            this.celltxt.Location = new System.Drawing.Point(232, 386);
             this.celltxt.Name = "celltxt";
             this.celltxt.Size = new System.Drawing.Size(100, 20);
             this.celltxt.TabIndex = 26;
@@ -518,7 +528,7 @@
             // 
             // addbut
             // 
-            this.addbut.Location = new System.Drawing.Point(194, 593);
+            this.addbut.Location = new System.Drawing.Point(197, 593);
             this.addbut.Name = "addbut";
             this.addbut.Size = new System.Drawing.Size(75, 23);
             this.addbut.TabIndex = 38;
@@ -538,7 +548,7 @@
             // 
             // deletebut
             // 
-            this.deletebut.Location = new System.Drawing.Point(390, 593);
+            this.deletebut.Location = new System.Drawing.Point(373, 593);
             this.deletebut.Name = "deletebut";
             this.deletebut.Size = new System.Drawing.Size(75, 23);
             this.deletebut.TabIndex = 40;
@@ -569,7 +579,11 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
+            this.toolStripMenuItem1,
+            this.fileToolStripMenuItem,
+            this.ediitToolStripMenuItem,
+            this.reportsToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1009, 24);
@@ -623,11 +637,81 @@
             this.nracheckBox.UseVisualStyleBackColor = true;
             this.nracheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // invoicesbut
+            // 
+            this.invoicesbut.Location = new System.Drawing.Point(463, 593);
+            this.invoicesbut.Name = "invoicesbut";
+            this.invoicesbut.Size = new System.Drawing.Size(75, 23);
+            this.invoicesbut.TabIndex = 48;
+            this.invoicesbut.Text = "Invoices";
+            this.invoicesbut.UseVisualStyleBackColor = true;
+            this.invoicesbut.Click += new System.EventHandler(this.invoicesbut_Click);
+            // 
+            // paybut
+            // 
+            this.paybut.Location = new System.Drawing.Point(558, 593);
+            this.paybut.Name = "paybut";
+            this.paybut.Size = new System.Drawing.Size(75, 23);
+            this.paybut.TabIndex = 49;
+            this.paybut.Text = "Pay";
+            this.paybut.UseVisualStyleBackColor = true;
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.systemToolStripMenuItem,
+            this.membershipTypesToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // ediitToolStripMenuItem
+            // 
+            this.ediitToolStripMenuItem.Name = "ediitToolStripMenuItem";
+            this.ediitToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.ediitToolStripMenuItem.Text = "Ediit";
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "About ...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // systemToolStripMenuItem
+            // 
+            this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
+            this.systemToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.systemToolStripMenuItem.Text = "System";
+            // 
+            // membershipTypesToolStripMenuItem
+            // 
+            this.membershipTypesToolStripMenuItem.Name = "membershipTypesToolStripMenuItem";
+            this.membershipTypesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.membershipTypesToolStripMenuItem.Text = "Membership Types";
+            this.membershipTypesToolStripMenuItem.Click += new System.EventHandler(this.membershipTypesToolStripMenuItem_Click);
+            // 
             // mainfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 787);
+            this.Controls.Add(this.paybut);
+            this.Controls.Add(this.invoicesbut);
             this.Controls.Add(this.nracheckBox);
             this.Controls.Add(this.goalcheckBox);
             this.Controls.Add(this.huntingcheckBox);
@@ -676,6 +760,7 @@
             this.Controls.Add(this.savebut);
             this.Controls.Add(this.addbut);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "mainfrm";
             this.Text = "Sportsmen Club System";
@@ -754,6 +839,16 @@
         private System.Windows.Forms.CheckBox goalcheckBox;
         private System.Windows.Forms.CheckBox nracheckBox;
         private System.Windows.Forms.BindingSource mtypeBindingSource;
+        private System.Windows.Forms.Button invoicesbut;
+        private System.Windows.Forms.Button paybut;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ediitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem systemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem membershipTypesToolStripMenuItem;
+        //  private System.Windows.Forms.Button paybut;
     }
 }
 

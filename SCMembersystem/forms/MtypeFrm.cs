@@ -1,4 +1,17 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : SCMembersystem
+// Author           : Bill Banks - office@ourweb.net
+// Created          : 08-09-2016
+//
+// Last Modified By : Bill Banks - office@ourweb.net
+// Last Modified On : 08-10-2016
+// ***********************************************************************
+// <copyright file="MtypeFrm.cs" company="Ourweb.net  --  508-829-2005">
+//     Copyright ©  2016
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +25,34 @@ using SCMembersystem.Models;
 
 namespace SCMembersystem.forms
 {
+    /// <summary>
+    /// Class mtypefrm.
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class mtypefrm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="mtypefrm"/> class.
+        /// </summary>
         public mtypefrm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles the Load event of the mtypefrm control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void mtypefrm_Load(object sender, EventArgs e)
         {
             GetLists();
         }
 
 
+        /// <summary>
+        /// Gets the lists.
+        /// </summary>
         private void GetLists()
         {
             using (var context = new DBContext())
@@ -37,17 +65,24 @@ namespace SCMembersystem.forms
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the addbut control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void addbut_Click(object sender, EventArgs e)
         {
             var hour = hoursUpDown.Value;
             var cost = costUpDown.Value;
             var name = nametxt.Text;
+            var ifee = ifeenumericUpDown.Value;
 
    var sale = new Mtype()
             {
               
            hours=(int) hour,
                 cost = cost,
+                initfee=ifee,
                 name=name
             };
             using (var context = new DBContext())
@@ -58,6 +93,11 @@ namespace SCMembersystem.forms
             GetLists();
         }
 
+        /// <summary>
+        /// Handles the UserDeletingRow event of the MtypesdataGridView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DataGridViewRowCancelEventArgs"/> instance containing the event data.</param>
         private void MtypesdataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             if (MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.YesNo) == DialogResult.No)
@@ -82,6 +122,11 @@ namespace SCMembersystem.forms
 
         }
 
+        /// <summary>
+        /// Handles the CellEndEdit event of the MtypesdataGridView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DataGridViewCellEventArgs"/> instance containing the event data.</param>
         private void MtypesdataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex > 0)
@@ -89,7 +134,8 @@ namespace SCMembersystem.forms
                 var saleid = (int) MtypesdataGridView.Rows[e.RowIndex].Cells[0].Value;
                 var name = (string) MtypesdataGridView.Rows[e.RowIndex].Cells[1].Value;
                 var cost = (decimal) MtypesdataGridView.Rows[e.RowIndex].Cells[2].Value;
-                var hours = (int) MtypesdataGridView.Rows[e.RowIndex].Cells[3].Value;
+                var ifee = (decimal)MtypesdataGridView.Rows[e.RowIndex].Cells[3].Value;
+                var hours = (int) MtypesdataGridView.Rows[e.RowIndex].Cells[4].Value;
 
                 var context = new DBContext();
                 var sale = context.Mtypes.SingleOrDefault(p => p.Id == saleid);
@@ -98,6 +144,7 @@ namespace SCMembersystem.forms
                 {
                     sale.name=name;
                     sale.cost = cost;
+                    sale.initfee = ifee;
                     sale.hours = hours;
                     context.SaveChanges();
                     GetLists();

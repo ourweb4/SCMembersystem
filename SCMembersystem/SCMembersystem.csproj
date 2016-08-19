@@ -48,6 +48,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -79,11 +82,23 @@
     <Compile Include="forms\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\clubfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\clubfrm.Designer.cs">
+      <DependentUpon>clubfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Committefrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\Committefrm.Designer.cs">
       <DependentUpon>Committefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\invoicesfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\invoicesfrm.Designer.cs">
+      <DependentUpon>invoicesfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\MtypeFrm.cs">
       <SubType>Form</SubType>
@@ -105,8 +120,13 @@
     <Compile Include="Migrations\201608170051576_initfee.Designer.cs">
       <DependentUpon>201608170051576_initfee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608181333086_club.cs" />
+    <Compile Include="Migrations\201608181333086_club.Designer.cs">
+      <DependentUpon>201608181333086_club.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\Club.cs" />
     <Compile Include="Models\Committe.cs" />
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\Member.cs" />
@@ -117,8 +137,14 @@
     <EmbeddedResource Include="forms\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\clubfrm.resx">
+      <DependentUpon>clubfrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\Committefrm.resx">
       <DependentUpon>Committefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\invoicesfrm.resx">
+      <DependentUpon>invoicesfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\MtypeFrm.resx">
       <DependentUpon>MtypeFrm.cs</DependentUpon>
@@ -142,6 +168,9 @@
     <EmbeddedResource Include="Migrations\201608170051576_initfee.resx">
       <DependentUpon>201608170051576_initfee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608181333086_club.resx">
+      <DependentUpon>201608181333086_club.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -162,6 +191,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="SCMembersystem.Models.Committe.datasource" />
+    <None Include="SCMembersystem.Models.Invoice.datasource" />
     <None Include="SCMembersystem.Models.Member.datasource" />
     <None Include="SCMembersystem.Models.Mtype.datasource" />
   </ItemGroup>
@@ -194,6 +224,12 @@
       <ProductName>SQL Server 2012 Express LocalDB</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

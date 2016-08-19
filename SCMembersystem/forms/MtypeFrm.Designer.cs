@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.MtypesdataGridView = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,10 +38,18 @@
             this.hoursUpDown = new System.Windows.Forms.NumericUpDown();
             this.addbut = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.initfee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ifeenumericUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.MtypesdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoursUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ifeenumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // MtypesdataGridView
@@ -57,6 +61,7 @@
             this.Id,
             this.nameDataGridViewTextBoxColumn,
             this.costDataGridViewTextBoxColumn,
+            this.initfee,
             this.hoursDataGridViewTextBoxColumn});
             this.MtypesdataGridView.DataSource = this.mtypeBindingSource;
             this.MtypesdataGridView.Location = new System.Drawing.Point(86, 42);
@@ -65,32 +70,6 @@
             this.MtypesdataGridView.TabIndex = 1;
             this.MtypesdataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.MtypesdataGridView_CellEndEdit);
             this.MtypesdataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.MtypesdataGridView_UserDeletingRow);
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "cost";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            // 
-            // hoursDataGridViewTextBoxColumn
-            // 
-            this.hoursDataGridViewTextBoxColumn.DataPropertyName = "hours";
-            this.hoursDataGridViewTextBoxColumn.HeaderText = "hours";
-            this.hoursDataGridViewTextBoxColumn.Name = "hoursDataGridViewTextBoxColumn";
             // 
             // mtypeBindingSource
             // 
@@ -108,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(114, 380);
+            this.label2.Location = new System.Drawing.Point(114, 430);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 4;
@@ -131,14 +110,14 @@
             // 
             // hoursUpDown
             // 
-            this.hoursUpDown.Location = new System.Drawing.Point(168, 380);
+            this.hoursUpDown.Location = new System.Drawing.Point(168, 430);
             this.hoursUpDown.Name = "hoursUpDown";
             this.hoursUpDown.Size = new System.Drawing.Size(120, 20);
             this.hoursUpDown.TabIndex = 7;
             // 
             // addbut
             // 
-            this.addbut.Location = new System.Drawing.Point(168, 430);
+            this.addbut.Location = new System.Drawing.Point(168, 480);
             this.addbut.Name = "addbut";
             this.addbut.Size = new System.Drawing.Size(75, 37);
             this.addbut.TabIndex = 8;
@@ -155,11 +134,62 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Name";
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "cost";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            // 
+            // initfee
+            // 
+            this.initfee.DataPropertyName = "initfee";
+            this.initfee.HeaderText = "initfee";
+            this.initfee.Name = "initfee";
+            // 
+            // hoursDataGridViewTextBoxColumn
+            // 
+            this.hoursDataGridViewTextBoxColumn.DataPropertyName = "hours";
+            this.hoursDataGridViewTextBoxColumn.HeaderText = "hours";
+            this.hoursDataGridViewTextBoxColumn.Name = "hoursDataGridViewTextBoxColumn";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(97, 372);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Initial Fee";
+            // 
+            // ifeenumericUpDown
+            // 
+            this.ifeenumericUpDown.DecimalPlaces = 2;
+            this.ifeenumericUpDown.Location = new System.Drawing.Point(168, 372);
+            this.ifeenumericUpDown.Name = "ifeenumericUpDown";
+            this.ifeenumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.ifeenumericUpDown.TabIndex = 11;
+            // 
             // mtypefrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 565);
+            this.Controls.Add(this.ifeenumericUpDown);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.addbut);
             this.Controls.Add(this.hoursUpDown);
@@ -175,6 +205,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.costUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoursUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ifeenumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,10 +213,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView MtypesdataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource mtypeBindingSource;
         private string Name;
         private System.Windows.Forms.Label label1;
@@ -195,5 +222,12 @@
         private System.Windows.Forms.NumericUpDown hoursUpDown;
         private System.Windows.Forms.Button addbut;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn initfee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown ifeenumericUpDown;
     }
 }

@@ -144,4 +144,29 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAA
+        AAD/////5ubm/66urv+xsbH/8fHx////////////////////////////////////////////////////
+        ////////7e3t/3l5ef9BQUH/FhYW/39/f//39/f/////////////////////////////////////////
+        /////////////6ysrP84ODj/JSUl/w8PD/8NDQ3/ioqK//z8/P//////////////////////////////
+        /////////////+7u7v+9vb3/LCws/xcXF/8TExP/CwsL/yYmJv/S0tL/////////////////////////
+        ///+/v7/6Ojo/7W1tf9ZWVn//////7CwsP8fHx//FhYW/xYWFv8aGhr/hYWF//b29v////////////X1
+        9f/Hx8f/lJSU/1ZWVv8uLi7/Hx8f///////7+/v/gICA/3Z2dv9aWlr/KSkp/0FBQf/FxcX//f39/8TE
+        xP9cXFz/Kysr/y8vL/8wMDD/MjIy/4mJif///////////7+/v/+NjY3/iIiI/1VVVf85OTn/g4OD/4SE
+        hP9GRkb/QEBA/zMzM/8iIiL/R0dH/7W1tf/8/Pz////////////e3t7/q6ur/8zMzP9bW1v/Kysr/1VV
+        Vf+Li4v/VlZW/yYmJv8uLi7/iYmJ/+Xl5f/////////////////7+/v/lJSU/2FhYf/Ozs7/WVlZ/y4u
+        Lv+fn5//tLS0/2NjY/+IiIj/2NjY//39/f//////////////////////srKy/2pqav9kZGT/NjY2/ycn
+        J/88PDz/paWl/9nZ2f/09PT//v7+////////////////////////////0dHR/2RkZP+4uLj/np6e/y8v
+        L/8TExP/QkJC/+Xl5f///////////////////////////////////////////zU1Nf9QUFD/eHh4/0hI
+        SP8eHh7/AgIC/29vb//+/v7///////////////////////////////////////////9oaGj/qKio/4uL
+        i/9KSkr/ERER/0VFRf/g4OD/////////////////////////////////////////////////k5OT/1VV
+        Vf9NTU3/NjY2/2RkZP/c3Nz//////////////////////////////////////////////////////yws
+        LP8yMjL/Xl5e/6+vr//09PT/////////////////////////////////////////////////////////
+        ///b29v/5ubm//j4+P//////////////////////////////////////////////////////////////
+        ////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SCMembersystem.Data;
+using SCMembersystem.forms;
 using SCMembersystem.Models;
 
 namespace SCMembersystem
@@ -90,6 +91,8 @@ namespace SCMembersystem
             goalcheckBox.Checked = currMember.goal;
             nracheckBox.Checked = currMember.nra;
             currid = currMember.Id;
+
+           
         }
 
         private void savemember()
@@ -267,8 +270,31 @@ namespace SCMembersystem
             {
                 savemember();
                 context.SaveChanges();
+                loadmember();
                 GetMembers();
             }
+        }
+
+        private void invoicesbut_Click(object sender, EventArgs e)
+        {
+            var invfrm = new invoicesfrm(currid);
+
+            invfrm.ShowDialog();
+            loadmember();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var helpbox = new AboutBox();
+
+            helpbox.ShowDialog();
+        }
+
+        private void membershipTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var mtypefrm = new mtypefrm();
+
+            mtypefrm.ShowDialog();
         }
     }
 }
