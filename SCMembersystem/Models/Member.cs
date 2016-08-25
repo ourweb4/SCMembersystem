@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
 // Assembly         : SCMembersystem
-// Author           : Bill
+// Author           : Bill Banks - office@ourweb.net
 // Created          : 08-09-2016
 //
-// Last Modified By : Bill
-// Last Modified On : 08-16-2016
+// Last Modified By : Bill Banks - office@ourweb.net
+// Last Modified On : 08-23-2016
 // ***********************************************************************
 // <copyright file="Member.cs" company="Ourweb.net  --  508-829-2005">
 //     Copyright ©  2016
@@ -131,7 +131,7 @@ namespace SCMembersystem.Models
         /// Gets or sets the join.
         /// </summary>
         /// <value>The join.</value>
-        [Required]
+       
         
         public DateTime join { get; set; }
 
@@ -196,7 +196,11 @@ namespace SCMembersystem.Models
         /// </summary>
         /// <value>The nextbill.</value>
         public DateTime nextbill { get; set; }
-
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="Member"/> is active.
+        /// </summary>
+        /// <value><c>true</c> if active; otherwise, <c>false</c>.</value>
+        public bool active { get; set; }
 
 
 

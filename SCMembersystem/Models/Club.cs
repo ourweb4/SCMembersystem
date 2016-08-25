@@ -4,7 +4,7 @@
 // Created          : 08-18-2016
 //
 // Last Modified By : Bill Banks - office@ourweb.net
-// Last Modified On : 08-18-2016
+// Last Modified On : 08-21-2016
 // ***********************************************************************
 // <copyright file="Club.cs" company="Ourweb.net  --  508-829-2005">
 //     Copyright ©  2016
@@ -17,6 +17,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+using SCMembersystem.Data;
 
 namespace SCMembersystem.Models
 {
@@ -100,5 +101,28 @@ namespace SCMembersystem.Models
         /// </summary>
         /// <value>The hours percent.</value>
         public int  hours_percent { get; set; }
+
+        /// <summary>
+        /// Reads this instance.
+        /// </summary>
+        public void read()
+        {
+            using (var context = new DBContext())
+            {
+                var temp = context.Clubs.SingleOrDefault(r => r.Id == 1);
+                this.Id = temp.Id;
+                this.clubname = temp.clubname;
+                this.address = temp.address;
+                this.city = temp.city;
+                this.state = temp.state;
+                this.zip = temp.zip;
+                this.email = temp.email;
+                this.phone = temp.phone;
+                this.website = temp.website;
+                this.hours_percent = temp.hours_percent;
+                this.trackhours = temp.trackhours;
+            }
+            
+        }
     }
 }

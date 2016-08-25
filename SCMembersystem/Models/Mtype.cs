@@ -4,7 +4,7 @@
 // Created          : 08-08-2016
 //
 // Last Modified By : Bill Banks - office@ourweb.net
-// Last Modified On : 08-08-2016
+// Last Modified On : 08-23-2016
 // ***********************************************************************
 // <copyright file="Mtype.cs" company="Ourweb.net  --  508-829-2005">
 //     Copyright ©  2016
@@ -52,5 +52,17 @@ namespace SCMembersystem.Models
         /// </summary>
         /// <value>The hours.</value>
         public int hours { get; set; }
+
+        /// <summary>
+        /// Gets or sets the days.
+        /// </summary>
+        /// <value>The days.</value>
+        public int days { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="Mtype"/> is once.
+        /// </summary>
+        /// <value><c>true</c> if once; otherwise, <c>false</c>.</value>
+        public bool once { get; set; }
     }
 }

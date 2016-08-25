@@ -4,7 +4,7 @@
 // Created          : 08-08-2016
 //
 // Last Modified By : Bill Banks - office@ourweb.net
-// Last Modified On : 08-16-2016
+// Last Modified On : 08-25-2016
 // ***********************************************************************
 // <copyright file="Invoice.cs" company="Ourweb.net  --  508-829-2005">
 //     Copyright ©  2016
@@ -49,7 +49,7 @@ namespace SCMembersystem.Models
         /// Gets or sets the invdate.
         /// </summary>
         /// <value>The invdate.</value>
-        public DateTime invdate { get; set; }
+        public DateTime? invdate { get; set; }
 
         /// <summary>
         /// Gets or sets the amount.

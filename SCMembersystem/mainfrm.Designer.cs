@@ -86,19 +86,21 @@
             this.ltccheckBox = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.membershipTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ediitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fishingcheckBox = new System.Windows.Forms.CheckBox();
             this.huntingcheckBox = new System.Windows.Forms.CheckBox();
             this.goalcheckBox = new System.Windows.Forms.CheckBox();
             this.nracheckBox = new System.Windows.Forms.CheckBox();
             this.invoicesbut = new System.Windows.Forms.Button();
             this.paybut = new System.Windows.Forms.Button();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ediitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.membershipTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activecheckBox = new System.Windows.Forms.CheckBox();
+            this.lettersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.membersdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
@@ -596,6 +598,58 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(25, 20);
             this.toolStripMenuItem1.Text = "0";
             // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.systemToolStripMenuItem,
+            this.membershipTypesToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // systemToolStripMenuItem
+            // 
+            this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
+            this.systemToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.systemToolStripMenuItem.Text = "System";
+            this.systemToolStripMenuItem.Click += new System.EventHandler(this.systemToolStripMenuItem_Click);
+            // 
+            // membershipTypesToolStripMenuItem
+            // 
+            this.membershipTypesToolStripMenuItem.Name = "membershipTypesToolStripMenuItem";
+            this.membershipTypesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.membershipTypesToolStripMenuItem.Text = "Membership Types";
+            this.membershipTypesToolStripMenuItem.Click += new System.EventHandler(this.membershipTypesToolStripMenuItem_Click);
+            // 
+            // ediitToolStripMenuItem
+            // 
+            this.ediitToolStripMenuItem.Name = "ediitToolStripMenuItem";
+            this.ediitToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.ediitToolStripMenuItem.Text = "Ediit";
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lettersToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.aboutToolStripMenuItem.Text = "About ...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
             // fishingcheckBox
             // 
             this.fishingcheckBox.AutoSize = true;
@@ -656,60 +710,29 @@
             this.paybut.Text = "Pay";
             this.paybut.UseVisualStyleBackColor = true;
             // 
-            // fileToolStripMenuItem
+            // activecheckBox
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.systemToolStripMenuItem,
-            this.membershipTypesToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.activecheckBox.AutoSize = true;
+            this.activecheckBox.Location = new System.Drawing.Point(795, 340);
+            this.activecheckBox.Name = "activecheckBox";
+            this.activecheckBox.Size = new System.Drawing.Size(56, 17);
+            this.activecheckBox.TabIndex = 50;
+            this.activecheckBox.Text = "Active";
+            this.activecheckBox.UseVisualStyleBackColor = true;
             // 
-            // ediitToolStripMenuItem
+            // lettersToolStripMenuItem
             // 
-            this.ediitToolStripMenuItem.Name = "ediitToolStripMenuItem";
-            this.ediitToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.ediitToolStripMenuItem.Text = "Ediit";
-            // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aboutToolStripMenuItem.Text = "About ...";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // systemToolStripMenuItem
-            // 
-            this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
-            this.systemToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.systemToolStripMenuItem.Text = "System";
-            // 
-            // membershipTypesToolStripMenuItem
-            // 
-            this.membershipTypesToolStripMenuItem.Name = "membershipTypesToolStripMenuItem";
-            this.membershipTypesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.membershipTypesToolStripMenuItem.Text = "Membership Types";
-            this.membershipTypesToolStripMenuItem.Click += new System.EventHandler(this.membershipTypesToolStripMenuItem_Click);
+            this.lettersToolStripMenuItem.Name = "lettersToolStripMenuItem";
+            this.lettersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lettersToolStripMenuItem.Text = "Letters";
+            this.lettersToolStripMenuItem.Click += new System.EventHandler(this.lettersToolStripMenuItem_Click);
             // 
             // mainfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 787);
+            this.Controls.Add(this.activecheckBox);
             this.Controls.Add(this.paybut);
             this.Controls.Add(this.invoicesbut);
             this.Controls.Add(this.nracheckBox);
@@ -848,6 +871,8 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem systemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem membershipTypesToolStripMenuItem;
+        private System.Windows.Forms.CheckBox activecheckBox;
+        private System.Windows.Forms.ToolStripMenuItem lettersToolStripMenuItem;
         //  private System.Windows.Forms.Button paybut;
     }
 }

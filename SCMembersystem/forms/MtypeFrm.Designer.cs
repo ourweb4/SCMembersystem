@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.MtypesdataGridView = new System.Windows.Forms.DataGridView();
-            this.mtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.initfee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.nametxt = new System.Windows.Forms.TextBox();
@@ -38,23 +39,25 @@
             this.hoursUpDown = new System.Windows.Forms.NumericUpDown();
             this.addbut = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.initfee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.ifeenumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.daysnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.oncecheckBox = new System.Windows.Forms.CheckBox();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MtypesdataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoursUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ifeenumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daysnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // MtypesdataGridView
             // 
-            this.MtypesdataGridView.AllowUserToDeleteRows = false;
             this.MtypesdataGridView.AutoGenerateColumns = false;
             this.MtypesdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MtypesdataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -64,16 +67,26 @@
             this.initfee,
             this.hoursDataGridViewTextBoxColumn});
             this.MtypesdataGridView.DataSource = this.mtypeBindingSource;
-            this.MtypesdataGridView.Location = new System.Drawing.Point(86, 42);
+            this.MtypesdataGridView.Location = new System.Drawing.Point(69, 35);
             this.MtypesdataGridView.Name = "MtypesdataGridView";
             this.MtypesdataGridView.Size = new System.Drawing.Size(736, 189);
             this.MtypesdataGridView.TabIndex = 1;
             this.MtypesdataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.MtypesdataGridView_CellEndEdit);
             this.MtypesdataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.MtypesdataGridView_UserDeletingRow);
             // 
-            // mtypeBindingSource
+            // Id
             // 
-            this.mtypeBindingSource.DataSource = typeof(SCMembersystem.Models.Mtype);
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // initfee
+            // 
+            this.initfee.DataPropertyName = "initfee";
+            this.initfee.HeaderText = "initfee";
+            this.initfee.Name = "initfee";
             // 
             // label1
             // 
@@ -104,6 +117,11 @@
             // 
             this.costUpDown.DecimalPlaces = 2;
             this.costUpDown.Location = new System.Drawing.Point(168, 329);
+            this.costUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.costUpDown.Name = "costUpDown";
             this.costUpDown.Size = new System.Drawing.Size(120, 20);
             this.costUpDown.TabIndex = 6;
@@ -117,7 +135,7 @@
             // 
             // addbut
             // 
-            this.addbut.Location = new System.Drawing.Point(168, 480);
+            this.addbut.Location = new System.Drawing.Point(168, 505);
             this.addbut.Name = "addbut";
             this.addbut.Size = new System.Drawing.Size(75, 37);
             this.addbut.TabIndex = 8;
@@ -134,13 +152,49 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Name";
             // 
-            // Id
+            // label4
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(97, 404);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Initial Fee";
+            // 
+            // ifeenumericUpDown
+            // 
+            this.ifeenumericUpDown.DecimalPlaces = 2;
+            this.ifeenumericUpDown.Location = new System.Drawing.Point(168, 404);
+            this.ifeenumericUpDown.Name = "ifeenumericUpDown";
+            this.ifeenumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.ifeenumericUpDown.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(68, 363);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Number of days";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // daysnumericUpDown
+            // 
+            this.daysnumericUpDown.Location = new System.Drawing.Point(168, 363);
+            this.daysnumericUpDown.Name = "daysnumericUpDown";
+            this.daysnumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.daysnumericUpDown.TabIndex = 13;
+            // 
+            // oncecheckBox
+            // 
+            this.oncecheckBox.AutoSize = true;
+            this.oncecheckBox.Location = new System.Drawing.Point(168, 470);
+            this.oncecheckBox.Name = "oncecheckBox";
+            this.oncecheckBox.Size = new System.Drawing.Size(52, 17);
+            this.oncecheckBox.TabIndex = 14;
+            this.oncecheckBox.Text = "Once";
+            this.oncecheckBox.UseVisualStyleBackColor = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -154,40 +208,24 @@
             this.costDataGridViewTextBoxColumn.HeaderText = "cost";
             this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
             // 
-            // initfee
-            // 
-            this.initfee.DataPropertyName = "initfee";
-            this.initfee.HeaderText = "initfee";
-            this.initfee.Name = "initfee";
-            // 
             // hoursDataGridViewTextBoxColumn
             // 
             this.hoursDataGridViewTextBoxColumn.DataPropertyName = "hours";
             this.hoursDataGridViewTextBoxColumn.HeaderText = "hours";
             this.hoursDataGridViewTextBoxColumn.Name = "hoursDataGridViewTextBoxColumn";
             // 
-            // label4
+            // mtypeBindingSource
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(97, 372);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Initial Fee";
-            // 
-            // ifeenumericUpDown
-            // 
-            this.ifeenumericUpDown.DecimalPlaces = 2;
-            this.ifeenumericUpDown.Location = new System.Drawing.Point(168, 372);
-            this.ifeenumericUpDown.Name = "ifeenumericUpDown";
-            this.ifeenumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.ifeenumericUpDown.TabIndex = 11;
+            this.mtypeBindingSource.DataSource = typeof(SCMembersystem.Models.Mtype);
             // 
             // mtypefrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 565);
+            this.Controls.Add(this.oncecheckBox);
+            this.Controls.Add(this.daysnumericUpDown);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.ifeenumericUpDown);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -202,10 +240,11 @@
             this.Text = "Membership Types";
             this.Load += new System.EventHandler(this.mtypefrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MtypesdataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.costUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoursUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ifeenumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daysnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +268,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown ifeenumericUpDown;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown daysnumericUpDown;
+        private System.Windows.Forms.CheckBox oncecheckBox;
     }
 }

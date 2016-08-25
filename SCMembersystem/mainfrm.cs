@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SCMembersystem.Data;
 using SCMembersystem.forms;
 using SCMembersystem.Models;
+using SCMembersystem.Reports;
 
 namespace SCMembersystem
 {
@@ -68,6 +69,7 @@ namespace SCMembersystem
         private void loadmember()
         {
             mtypcomboBox.SelectedValue = currMember.mtype;
+            activecheckBox.Checked = currMember.active;
             lasttxt.Text = currMember.lastname;
             firsttxt.Text = currMember.firstname;
             addresstxt.Text = currMember.address;
@@ -98,6 +100,7 @@ namespace SCMembersystem
         private void savemember()
         {
             currMember.mtype = (int) mtypcomboBox.SelectedItem;
+            currMember.active = activecheckBox.Checked;
             currMember.lastname = lasttxt.Text;
             currMember.firstname = firsttxt.Text;
             currMember.address = addresstxt.Text;
@@ -295,6 +298,19 @@ namespace SCMembersystem
             var mtypefrm = new mtypefrm();
 
             mtypefrm.ShowDialog();
+            Getmtypes();
+        }
+
+        private void systemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var clubfrm = new clubfrm();
+            clubfrm.ShowDialog();
+        }
+
+        private void lettersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var letterfrm = new lettersfrm();
+            letterfrm.ShowDialog();
         }
     }
 }

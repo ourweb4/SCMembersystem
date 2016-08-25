@@ -76,11 +76,15 @@ namespace SCMembersystem.forms
             var cost = costUpDown.Value;
             var name = nametxt.Text;
             var ifee = ifeenumericUpDown.Value;
+            var days = daysnumericUpDown.Value;
+            var once = oncecheckBox.Checked;
 
    var sale = new Mtype()
             {
               
            hours=(int) hour,
+           once=once,
+           days=(int) days,
                 cost = cost,
                 initfee=ifee,
                 name=name
@@ -150,6 +154,11 @@ namespace SCMembersystem.forms
                     GetLists();
                 }
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

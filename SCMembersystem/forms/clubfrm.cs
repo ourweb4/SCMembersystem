@@ -1,4 +1,17 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : SCMembersystem
+// Author           : Bill Banks - office@ourweb.net
+// Created          : 08-19-2016
+//
+// Last Modified By : Bill Banks - office@ourweb.net
+// Last Modified On : 08-19-2016
+// ***********************************************************************
+// <copyright file="clubfrm.cs" company="Ourweb.net  --  508-829-2005">
+//     Copyright ©  2016
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +25,33 @@ using SCMembersystem.Models;
 
 namespace SCMembersystem.forms
 {
+    /// <summary>
+    /// Class clubfrm.
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class clubfrm : Form
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="clubfrm"/> class.
+        /// </summary>
         public clubfrm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles the Load event of the clubfrm control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void clubfrm_Load(object sender, EventArgs e)
         {
             loaddata();
         }
 
+        /// <summary>
+        /// Loaddatas this instance.
+        /// </summary>
         private void loaddata()
         {
             using (var context = new DBContext())
@@ -45,6 +73,9 @@ namespace SCMembersystem.forms
             }
         }
 
+        /// <summary>
+        /// Savedatas this instance.
+        /// </summary>
         private void savedata()
         {
             
@@ -78,6 +109,11 @@ namespace SCMembersystem.forms
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the savebut control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void savebut_Click(object sender, EventArgs e)
         {
             savedata();
