@@ -229,6 +229,7 @@ namespace SCMembersystem
         {
             currid = 0;
             currMember= new Member();
+            currMember.active = true;
             loadmember();
             using (var context = new DBContext() )
             {
@@ -311,6 +312,19 @@ namespace SCMembersystem
         {
             var letterfrm = new lettersfrm();
             letterfrm.ShowDialog();
+        }
+
+        private void processInvoicesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var processfrm = new processfrm();
+            processfrm.ShowDialog();
+
+        }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Use this since we are a WinForms app
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

@@ -4,7 +4,7 @@
 // Created          : 08-09-2016
 //
 // Last Modified By : Bill Banks - office@ourweb.net
-// Last Modified On : 08-10-2016
+// Last Modified On : 09-06-2016
 // ***********************************************************************
 // <copyright file="MtypeFrm.cs" company="Ourweb.net  --  508-829-2005">
 //     Copyright ©  2016
@@ -95,6 +95,12 @@ namespace SCMembersystem.forms
                 context.SaveChanges();
             }
             GetLists();
+            oncecheckBox.Checked = false;
+            hoursUpDown.Value = 0;
+            costUpDown.Value = 0;
+            nametxt.Text = "";
+            ifeenumericUpDown.Value = 0;
+            daysnumericUpDown.Value = 0;
         }
 
         /// <summary>
@@ -140,6 +146,10 @@ namespace SCMembersystem.forms
                 var cost = (decimal) MtypesdataGridView.Rows[e.RowIndex].Cells[2].Value;
                 var ifee = (decimal)MtypesdataGridView.Rows[e.RowIndex].Cells[3].Value;
                 var hours = (int) MtypesdataGridView.Rows[e.RowIndex].Cells[4].Value;
+                var days = (int)MtypesdataGridView.Rows[e.RowIndex].Cells[5].Value;
+                var once = (bool)MtypesdataGridView.Rows[e.RowIndex].Cells[6].Value;
+
+
 
                 var context = new DBContext();
                 var sale = context.Mtypes.SingleOrDefault(p => p.Id == saleid);
@@ -147,6 +157,8 @@ namespace SCMembersystem.forms
                 if (sale != null)
                 {
                     sale.name=name;
+                    sale.days = days;
+                    sale.once = once;
                     sale.cost = cost;
                     sale.initfee = ifee;
                     sale.hours = hours;
@@ -157,6 +169,11 @@ namespace SCMembersystem.forms
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MtypesdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
