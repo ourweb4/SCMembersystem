@@ -18,13 +18,17 @@ namespace SCMembersystem
     {
         public int currid = 0;
         private Member currMember = new Member();
+
+         
         public mainfrm()
         {
             InitializeComponent();
         }
 
+   
         private void Getmtypes()
         {
+            //mtypeBindingSource.DataSource = null;
             using (var context = new DBContext())
             {
 
@@ -56,14 +60,14 @@ namespace SCMembersystem
                 using (var context = new DBContext())
                 {
                     membersdataGridView.DataSource = context.Members
-                        .Where(e => e.lastname == lname)
+                        .Where(e => e.lastname.StartsWith(lname))
                         .OrderBy(e => e.lastname)
                         .ThenBy(e => e.firstname)
                         .ToList();
 
                 }
             }
-            Getmtypes();
+        //    Getmtypes();
         }
 
         private void loadmember()
@@ -81,7 +85,7 @@ namespace SCMembersystem
             emailtxt.Text = currMember.email;
             employedbytxt.Text = currMember.employedby;
             occupationtxt.Text = currMember.occupation;
-            dobdateTimePicker.Value = currMember.dob;
+             dobdateTimePicker.Value = currMember.dob;
             joindateTimePicker.Value = currMember.join;
             nextbilldateTimePicker.Value = currMember.nextbill;
             hoursnumericUpDown.Value = currMember.hours;
@@ -99,7 +103,7 @@ namespace SCMembersystem
 
         private void savemember()
         {
-            currMember.mtype = (int) mtypcomboBox.SelectedItem;
+            if (mtypcomboBox.SelectedValue != null) currMember.mtype = (int) mtypcomboBox.SelectedValue;
             currMember.active = activecheckBox.Checked;
             currMember.lastname = lasttxt.Text;
             currMember.firstname = firsttxt.Text;
@@ -134,6 +138,7 @@ namespace SCMembersystem
 
         private void mainfrm_Load(object sender, EventArgs e)
         {
+            Getmtypes();
             GetMembers("");
         }
 
@@ -227,15 +232,17 @@ namespace SCMembersystem
 
         private void addbut_Click(object sender, EventArgs e)
         {
-            currid = 0;
             currMember= new Member();
             currMember.active = true;
+            currMember.dob = DateTime.Now;
+            currMember.nextbill=DateTime.Now;
+            currMember.join=DateTime.Now;
+            currMember.Id = 0;
+            currid = 0;
+            
+            //currMember.mtype = 1;
             loadmember();
-            using (var context = new DBContext() )
-            {
-                currid = context.Members.Add(currMember).Id;
-                context.SaveChanges();
-            }
+            
         }
 
         private void deletebut_Click(object sender, EventArgs e)
@@ -269,13 +276,25 @@ namespace SCMembersystem
         private void savebut_Click(object sender, EventArgs e)
         {
             var context=new DBContext();
-            currMember = context.Members.SingleOrDefault(r => r.Id == currid);
-            if (currMember != null)
+            if (currid != 0)
+            {
+                currMember = context.Members.SingleOrDefault(r => r.Id == currid);
+                if (currMember != null)
+                {
+                    savemember();
+                    context.SaveChanges();
+                    loadmember();
+                    GetMembers();
+                }
+            }
+            else
             {
                 savemember();
+                currid=context.Members.Add(currMember).Id;
                 context.SaveChanges();
                 loadmember();
                 GetMembers();
+
             }
         }
 
@@ -299,7 +318,7 @@ namespace SCMembersystem
             var mtypefrm = new mtypefrm();
 
             mtypefrm.ShowDialog();
-            Getmtypes();
+        //    Getmtypes();
         }
 
         private void systemToolStripMenuItem_Click(object sender, EventArgs e)
@@ -325,6 +344,68 @@ namespace SCMembersystem
         {
             // Use this since we are a WinForms app
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void dobdateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void membersdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+
+        }
+
+        private void paybut_Click(object sender, EventArgs e)
+        {
+            var context = new DBContext();
+            var mtypeid = currMember.mtype;
+            var mtype = context.Mtypes.SingleOrDefault(x => x.Id == mtypeid); // get  fee
+            if (mtype != null)
+            {
+                var amt = mtype.cost + mtype.initfee;
+                var minhours = mtype.hours;
+                var days = mtype.days;
+                if (!mtype.once)
+                {
+                    var crinv = new Invoice();
+                    crinv.memberId = currMember.Id;
+                    crinv.invdate = DateTime.Now;
+                    string description;
+                    decimal tot;
+
+
+                    tot = amt;
+                    description = string.Format("Membership Type: {0} ",
+                        mtype.name);
+
+                    crinv.amount = tot;
+                    crinv.description = description;
+                    context.Invoices.Add(crinv);
+                    context.SaveChanges();
+                    currMember = context.Members.SingleOrDefault(r => r.Id == currid);
+                    if (currMember != null)
+                    {
+                        currMember.amtdue += tot;
+                        currMember.nextbill = currMember.nextbill.AddDays(days);
+                    }
+                    context.SaveChanges();
+                }
+
+            }
+
+            var invfrm = new invoicesfrm(currid);
+
+            invfrm.ShowDialog();
+            loadmember();
+
+        }
+
+        private void invoicesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             
         }
     }
 }

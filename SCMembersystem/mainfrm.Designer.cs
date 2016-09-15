@@ -91,6 +91,7 @@
             this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.membershipTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.processInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lettersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,7 +103,7 @@
             this.invoicesbut = new System.Windows.Forms.Button();
             this.paybut = new System.Windows.Forms.Button();
             this.activecheckBox = new System.Windows.Forms.CheckBox();
-            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.invoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.membersdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
@@ -129,11 +130,12 @@
             this.hours,
             this.active});
             this.membersdataGridView.DataSource = this.memberBindingSource;
-            this.membersdataGridView.Location = new System.Drawing.Point(28, 65);
+            this.membersdataGridView.Location = new System.Drawing.Point(25, 65);
             this.membersdataGridView.Name = "membersdataGridView";
             this.membersdataGridView.ReadOnly = true;
-            this.membersdataGridView.Size = new System.Drawing.Size(887, 229);
+            this.membersdataGridView.Size = new System.Drawing.Size(937, 229);
             this.membersdataGridView.TabIndex = 0;
+            this.membersdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.membersdataGridView_CellContentClick);
             this.membersdataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.membersdataGridView_RowEnter);
             // 
             // Id
@@ -259,7 +261,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(579, 339);
+            this.label4.Location = new System.Drawing.Point(589, 342);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 6;
@@ -288,7 +290,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(321, 372);
+            this.label7.Location = new System.Drawing.Point(354, 381);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(30, 13);
             this.label7.TabIndex = 9;
@@ -298,7 +300,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(576, 372);
+            this.label8.Location = new System.Drawing.Point(607, 373);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(26, 13);
             this.label8.TabIndex = 10;
@@ -403,9 +405,10 @@
             // 
             // mtypcomboBox
             // 
-            this.mtypcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.mtypeBindingSource, "Id", true));
-            this.mtypcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mtypeBindingSource, "name", true));
-            this.mtypcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.mtypeBindingSource, "Id", true));
+            this.mtypcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.mtypeBindingSource, "Id", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.mtypcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.mtypeBindingSource, "Id", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.mtypcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.mtypeBindingSource, "Id", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.mtypcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mtypeBindingSource, "name", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.mtypcomboBox.DataSource = this.mtypeBindingSource;
             this.mtypcomboBox.DisplayMember = "name";
             this.mtypcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -414,6 +417,7 @@
             this.mtypcomboBox.Name = "mtypcomboBox";
             this.mtypcomboBox.Size = new System.Drawing.Size(121, 21);
             this.mtypcomboBox.TabIndex = 21;
+            this.mtypcomboBox.ValueMember = "Id";
             this.mtypcomboBox.SelectedIndexChanged += new System.EventHandler(this.mtypcomboBox_SelectedIndexChanged);
             // 
             // mtypeBindingSource
@@ -429,14 +433,14 @@
             // 
             // lasttxt
             // 
-            this.lasttxt.Location = new System.Drawing.Point(371, 340);
+            this.lasttxt.Location = new System.Drawing.Point(365, 342);
             this.lasttxt.Name = "lasttxt";
             this.lasttxt.Size = new System.Drawing.Size(100, 20);
             this.lasttxt.TabIndex = 23;
             // 
             // emailtxt
             // 
-            this.emailtxt.Location = new System.Drawing.Point(658, 337);
+            this.emailtxt.Location = new System.Drawing.Point(666, 339);
             this.emailtxt.Name = "emailtxt";
             this.emailtxt.Size = new System.Drawing.Size(100, 20);
             this.emailtxt.TabIndex = 24;
@@ -450,7 +454,7 @@
             // 
             // celltxt
             // 
-            this.celltxt.Location = new System.Drawing.Point(232, 386);
+            this.celltxt.Location = new System.Drawing.Point(232, 370);
             this.celltxt.Name = "celltxt";
             this.celltxt.Size = new System.Drawing.Size(100, 20);
             this.celltxt.TabIndex = 26;
@@ -499,14 +503,15 @@
             // 
             // dobdateTimePicker
             // 
-            this.dobdateTimePicker.Location = new System.Drawing.Point(370, 370);
+            this.dobdateTimePicker.Location = new System.Drawing.Point(390, 374);
             this.dobdateTimePicker.Name = "dobdateTimePicker";
             this.dobdateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dobdateTimePicker.TabIndex = 33;
+            this.dobdateTimePicker.ValueChanged += new System.EventHandler(this.dobdateTimePicker_ValueChanged);
             // 
             // joindateTimePicker
             // 
-            this.joindateTimePicker.Location = new System.Drawing.Point(626, 370);
+            this.joindateTimePicker.Location = new System.Drawing.Point(682, 374);
             this.joindateTimePicker.Name = "joindateTimePicker";
             this.joindateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.joindateTimePicker.TabIndex = 34;
@@ -533,7 +538,7 @@
             // 
             // nextbilldateTimePicker
             // 
-            this.nextbilldateTimePicker.Location = new System.Drawing.Point(558, 486);
+            this.nextbilldateTimePicker.Location = new System.Drawing.Point(558, 485);
             this.nextbilldateTimePicker.Name = "nextbilldateTimePicker";
             this.nextbilldateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.nextbilldateTimePicker.TabIndex = 37;
@@ -639,10 +644,18 @@
             this.processInvoicesToolStripMenuItem.Text = "Process Invoices";
             this.processInvoicesToolStripMenuItem.Click += new System.EventHandler(this.processInvoicesToolStripMenuItem_Click);
             // 
+            // quitToolStripMenuItem
+            // 
+            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.quitToolStripMenuItem.Text = "Quit";
+            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
+            // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lettersToolStripMenuItem});
+            this.lettersToolStripMenuItem,
+            this.invoicesToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -650,7 +663,7 @@
             // lettersToolStripMenuItem
             // 
             this.lettersToolStripMenuItem.Name = "lettersToolStripMenuItem";
-            this.lettersToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.lettersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.lettersToolStripMenuItem.Text = "Letters";
             this.lettersToolStripMenuItem.Click += new System.EventHandler(this.lettersToolStripMenuItem_Click);
             // 
@@ -728,23 +741,24 @@
             this.paybut.TabIndex = 49;
             this.paybut.Text = "Pay";
             this.paybut.UseVisualStyleBackColor = true;
+            this.paybut.Click += new System.EventHandler(this.paybut_Click);
             // 
             // activecheckBox
             // 
             this.activecheckBox.AutoSize = true;
-            this.activecheckBox.Location = new System.Drawing.Point(795, 340);
+            this.activecheckBox.Location = new System.Drawing.Point(826, 341);
             this.activecheckBox.Name = "activecheckBox";
             this.activecheckBox.Size = new System.Drawing.Size(56, 17);
             this.activecheckBox.TabIndex = 50;
             this.activecheckBox.Text = "Active";
             this.activecheckBox.UseVisualStyleBackColor = true;
             // 
-            // quitToolStripMenuItem
+            // invoicesToolStripMenuItem
             // 
-            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.quitToolStripMenuItem.Text = "Quit";
-            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
+            this.invoicesToolStripMenuItem.Name = "invoicesToolStripMenuItem";
+            this.invoicesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.invoicesToolStripMenuItem.Text = "Invoices";
+            this.invoicesToolStripMenuItem.Click += new System.EventHandler(this.invoicesToolStripMenuItem_Click);
             // 
             // mainfrm
             // 
@@ -852,7 +866,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox mtypcomboBox;
         private System.Windows.Forms.TextBox firsttxt;
         private System.Windows.Forms.TextBox lasttxt;
         private System.Windows.Forms.TextBox emailtxt;
@@ -894,6 +907,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn active;
         private System.Windows.Forms.ToolStripMenuItem processInvoicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
+        public System.Windows.Forms.ComboBox mtypcomboBox;
+        private System.Windows.Forms.ToolStripMenuItem invoicesToolStripMenuItem;
         //  private System.Windows.Forms.Button paybut;
     }
 }

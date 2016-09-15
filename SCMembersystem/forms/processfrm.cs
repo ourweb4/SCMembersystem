@@ -4,7 +4,7 @@
 // Created          : 09-06-2016
 //
 // Last Modified By : Bill Banks - office@ourweb.net
-// Last Modified On : 09-07-2016
+// Last Modified On : 09-13-2016
 // ***********************************************************************
 // <copyright file="processfrm.cs" company="Ourweb.net  --  508-829-2005">
 //     Copyright ©  2016
@@ -36,7 +36,7 @@ namespace SCMembersystem.forms
         /// </summary>
         private Club clubinfo = new Club();
         /// <summary>
-        /// Initializes a new instance of the <see cref="processfrm"/> class.
+        /// Initializes a new instance of the <see cref="processfrm" /> class.
         /// </summary>
         public processfrm()
         {
@@ -47,7 +47,7 @@ namespace SCMembersystem.forms
         /// Handles the Load event of the processfrm control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void processfrm_Load(object sender, EventArgs e)
         {
             clubinfo.read();
@@ -57,7 +57,7 @@ namespace SCMembersystem.forms
         /// Handles the Click event of the processbut control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         private void processbut_Click(object sender, EventArgs e)
         {
             var from = fromdateTimePicker.Value.AddDays(-1);
@@ -84,6 +84,7 @@ namespace SCMembersystem.forms
                         {
                             var crinv = new Invoice();
                             crinv.memberId = member.Id;
+                            var currid = member.Id;
                             crinv.invdate=DateTime.Now;
                             string description;
                             decimal tot;
@@ -103,13 +104,18 @@ namespace SCMembersystem.forms
                             crinv.amount = tot;
                             crinv.description = description;
                             context.Invoices.Add(crinv);
-                            member.amtdue += tot;
-                            member.nextbill = member.nextbill.AddDays(days);
+                            context.SaveChanges();
+                            var umember = context.Members.SingleOrDefault(r => r.Id == currid);
+                            if (umember != null)
+                            {
+                                umember.amtdue += tot;
+                                umember.nextbill = umember.nextbill.AddDays(days);
+                            }
                             context.SaveChanges();
                         }
 
-                    }
                 }
+                    }
                
             }
         }

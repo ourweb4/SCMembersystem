@@ -4,7 +4,7 @@
 // Created          : 08-09-2016
 //
 // Last Modified By : Bill Banks - office@ourweb.net
-// Last Modified On : 08-23-2016
+// Last Modified On : 09-08-2016
 // ***********************************************************************
 // <copyright file="Member.cs" company="Ourweb.net  --  508-829-2005">
 //     Copyright ©  2016
@@ -95,28 +95,28 @@ namespace SCMembersystem.Models
         /// Gets or sets the cell.
         /// </summary>
         /// <value>The cell.</value>
-        [Required]
+
         [StringLength(50)]
         public string cell { get; set; }
         /// <summary>
         /// Gets or sets the email.
         /// </summary>
         /// <value>The email.</value>
-        [Required]
+
         [StringLength(50)]
         public string email { get; set; }
         /// <summary>
         /// Gets or sets the employedby.
         /// </summary>
         /// <value>The employedby.</value>
-        [Required]
+       // [Required]
         [StringLength(50)]
         public string employedby { get; set; }
         /// <summary>
         /// Gets or sets the occupation.
         /// </summary>
         /// <value>The occupation.</value>
-        [Required]
+       // [Required]
         [StringLength(50)]
         public string occupation { get; set; }
 
@@ -131,8 +131,8 @@ namespace SCMembersystem.Models
         /// Gets or sets the join.
         /// </summary>
         /// <value>The join.</value>
-       
-        
+
+
         public DateTime join { get; set; }
 
         /// <summary>
@@ -197,7 +197,7 @@ namespace SCMembersystem.Models
         /// <value>The nextbill.</value>
         public DateTime nextbill { get; set; }
         /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="Member"/> is active.
+        /// Gets or sets a value indicating whether this <see cref="Member" /> is active.
         /// </summary>
         /// <value><c>true</c> if active; otherwise, <c>false</c>.</value>
         public bool active { get; set; }

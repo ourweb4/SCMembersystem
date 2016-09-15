@@ -38,12 +38,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.amtduelab = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paidamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -152,10 +152,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(826, 150);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // invoiceBindingSource
-            // 
-            this.invoiceBindingSource.DataSource = typeof(SCMembersystem.Models.Invoice);
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -191,6 +188,10 @@
             this.paidamountDataGridViewTextBoxColumn.HeaderText = "paidamount";
             this.paidamountDataGridViewTextBoxColumn.Name = "paidamountDataGridViewTextBoxColumn";
             this.paidamountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // invoiceBindingSource
+            // 
+            this.invoiceBindingSource.DataSource = typeof(SCMembersystem.Models.Invoice);
             // 
             // label2
             // 
@@ -264,8 +265,9 @@
             this.addbut.Name = "addbut";
             this.addbut.Size = new System.Drawing.Size(75, 23);
             this.addbut.TabIndex = 17;
-            this.addbut.Text = "New";
+            this.addbut.Text = "Add";
             this.addbut.UseVisualStyleBackColor = true;
+            this.addbut.Click += new System.EventHandler(this.addbut_Click);
             // 
             // savebut
             // 
@@ -275,6 +277,7 @@
             this.savebut.TabIndex = 18;
             this.savebut.Text = "Save";
             this.savebut.UseVisualStyleBackColor = true;
+            this.savebut.Click += new System.EventHandler(this.savebut_Click);
             // 
             // deletebut
             // 
@@ -284,6 +287,7 @@
             this.deletebut.TabIndex = 19;
             this.deletebut.Text = "Delete";
             this.deletebut.UseVisualStyleBackColor = true;
+            this.deletebut.Click += new System.EventHandler(this.deletebut_Click);
             // 
             // invoicesfrm
             // 

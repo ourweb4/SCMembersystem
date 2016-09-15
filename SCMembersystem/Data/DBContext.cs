@@ -23,6 +23,7 @@ using System.Data.Entity.Migrations.Model;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using SCMembersystem.Models;
 
 namespace SCMembersystem.Data
@@ -97,9 +98,9 @@ namespace SCMembersystem.Data
         /// many-to-many relationships and relationships where there is no foreign key property
         /// included in the entity class (often referred to as independent associations).</returns>
         public override int SaveChanges()
-        {
+       {
             ChangeTracker.DetectChanges(); //  sycn 
-
+            var recx = 0;
 
             var statemanger = ((IObjectContextAdapter)this).ObjectContext.ObjectStateManager;
 
@@ -115,11 +116,17 @@ namespace SCMembersystem.Data
                 createdrec.UpdatedOn = DateTime.Now;
 
             }
+            try
+            {
+                recx = base.SaveChanges();
+            }
+            catch (Exception exception)
+            {
+                DialogResult dialogResult = MessageBox.Show(  exception.Message, "Error", MessageBoxButtons.OK);
+            }
 
 
-
-
-            return base.SaveChanges();
+            return recx;
         }
     }
 }
