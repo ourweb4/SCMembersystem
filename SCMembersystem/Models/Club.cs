@@ -110,17 +110,20 @@ namespace SCMembersystem.Models
             using (var context = new DBContext())
             {
                 var temp = context.Clubs.SingleOrDefault(r => r.Id == 1);
-                this.Id = temp.Id;
-                this.clubname = temp.clubname;
-                this.address = temp.address;
-                this.city = temp.city;
-                this.state = temp.state;
-                this.zip = temp.zip;
-                this.email = temp.email;
-                this.phone = temp.phone;
-                this.website = temp.website;
-                this.hours_percent = temp.hours_percent;
-                this.trackhours = temp.trackhours;
+                if (temp != null)
+                {
+                    this.Id = temp.Id;
+                    this.clubname = temp.clubname;
+                    this.address = temp.address;
+                    this.city = temp.city;
+                    this.state = temp.state;
+                    this.zip = temp.zip;
+                    this.email = temp.email;
+                    this.phone = temp.phone;
+                    this.website = temp.website;
+                    this.hours_percent = temp.hours_percent;
+                    this.trackhours = temp.trackhours;
+                }
             }
             
         }

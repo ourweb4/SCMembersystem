@@ -94,6 +94,8 @@
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lettersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.invoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.membersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fishingcheckBox = new System.Windows.Forms.CheckBox();
@@ -103,7 +105,7 @@
             this.invoicesbut = new System.Windows.Forms.Button();
             this.paybut = new System.Windows.Forms.Button();
             this.activecheckBox = new System.Windows.Forms.CheckBox();
-            this.invoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.membersdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
@@ -149,63 +151,63 @@
             // firstnameDataGridViewTextBoxColumn
             // 
             this.firstnameDataGridViewTextBoxColumn.DataPropertyName = "firstname";
-            this.firstnameDataGridViewTextBoxColumn.HeaderText = "firstname";
+            this.firstnameDataGridViewTextBoxColumn.HeaderText = "First Name";
             this.firstnameDataGridViewTextBoxColumn.Name = "firstnameDataGridViewTextBoxColumn";
             this.firstnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lastnameDataGridViewTextBoxColumn
             // 
             this.lastnameDataGridViewTextBoxColumn.DataPropertyName = "lastname";
-            this.lastnameDataGridViewTextBoxColumn.HeaderText = "lastname";
+            this.lastnameDataGridViewTextBoxColumn.HeaderText = "Last Name";
             this.lastnameDataGridViewTextBoxColumn.Name = "lastnameDataGridViewTextBoxColumn";
             this.lastnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // addressDataGridViewTextBoxColumn
             // 
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cityDataGridViewTextBoxColumn
             // 
             this.cityDataGridViewTextBoxColumn.DataPropertyName = "city";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "city";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
             this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
             this.cityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // stateDataGridViewTextBoxColumn
             // 
             this.stateDataGridViewTextBoxColumn.DataPropertyName = "state";
-            this.stateDataGridViewTextBoxColumn.HeaderText = "state";
+            this.stateDataGridViewTextBoxColumn.HeaderText = "State";
             this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
             this.stateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // zipDataGridViewTextBoxColumn
             // 
             this.zipDataGridViewTextBoxColumn.DataPropertyName = "zip";
-            this.zipDataGridViewTextBoxColumn.HeaderText = "zip";
+            this.zipDataGridViewTextBoxColumn.HeaderText = "Zip";
             this.zipDataGridViewTextBoxColumn.Name = "zipDataGridViewTextBoxColumn";
             this.zipDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // phoneDataGridViewTextBoxColumn
             // 
             this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
             this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // hours
             // 
             this.hours.DataPropertyName = "hours";
-            this.hours.HeaderText = "hours";
+            this.hours.HeaderText = "Hours";
             this.hours.Name = "hours";
             this.hours.ReadOnly = true;
             // 
             // active
             // 
             this.active.DataPropertyName = "active";
-            this.active.HeaderText = "active";
+            this.active.HeaderText = "Active";
             this.active.Name = "active";
             this.active.ReadOnly = true;
             // 
@@ -655,7 +657,9 @@
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lettersToolStripMenuItem,
-            this.invoicesToolStripMenuItem});
+            this.invoicesToolStripMenuItem,
+            this.membersToolStripMenuItem,
+            this.accountsToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -666,6 +670,20 @@
             this.lettersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.lettersToolStripMenuItem.Text = "Letters";
             this.lettersToolStripMenuItem.Click += new System.EventHandler(this.lettersToolStripMenuItem_Click);
+            // 
+            // invoicesToolStripMenuItem
+            // 
+            this.invoicesToolStripMenuItem.Name = "invoicesToolStripMenuItem";
+            this.invoicesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.invoicesToolStripMenuItem.Text = "Invoices";
+            this.invoicesToolStripMenuItem.Click += new System.EventHandler(this.invoicesToolStripMenuItem_Click);
+            // 
+            // membersToolStripMenuItem
+            // 
+            this.membersToolStripMenuItem.Name = "membersToolStripMenuItem";
+            this.membersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.membersToolStripMenuItem.Text = "Members";
+            this.membersToolStripMenuItem.Click += new System.EventHandler(this.membersToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -753,12 +771,12 @@
             this.activecheckBox.Text = "Active";
             this.activecheckBox.UseVisualStyleBackColor = true;
             // 
-            // invoicesToolStripMenuItem
+            // accountsToolStripMenuItem
             // 
-            this.invoicesToolStripMenuItem.Name = "invoicesToolStripMenuItem";
-            this.invoicesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.invoicesToolStripMenuItem.Text = "Invoices";
-            this.invoicesToolStripMenuItem.Click += new System.EventHandler(this.invoicesToolStripMenuItem_Click);
+            this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
+            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.accountsToolStripMenuItem.Text = "Accounts";
+            this.accountsToolStripMenuItem.Click += new System.EventHandler(this.accountsToolStripMenuItem_Click);
             // 
             // mainfrm
             // 
@@ -836,15 +854,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView membersdataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn zipDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hours;
         private System.Windows.Forms.BindingSource memberBindingSource;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox searchtxt;
@@ -904,11 +913,22 @@
         private System.Windows.Forms.ToolStripMenuItem membershipTypesToolStripMenuItem;
         private System.Windows.Forms.CheckBox activecheckBox;
         private System.Windows.Forms.ToolStripMenuItem lettersToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn active;
         private System.Windows.Forms.ToolStripMenuItem processInvoicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         public System.Windows.Forms.ComboBox mtypcomboBox;
         private System.Windows.Forms.ToolStripMenuItem invoicesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem membersToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zipDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hours;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn active;
+        private System.Windows.Forms.ToolStripMenuItem accountsToolStripMenuItem;
         //  private System.Windows.Forms.Button paybut;
     }
 }

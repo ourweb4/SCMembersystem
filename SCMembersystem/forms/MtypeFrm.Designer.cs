@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.MtypesdataGridView = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.initfee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.days = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.once = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.mtypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +43,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.daysnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.oncecheckBox = new System.Windows.Forms.CheckBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.initfee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.days = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.once = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MtypesdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costUpDown)).BeginInit();
@@ -71,57 +71,13 @@
             this.days,
             this.once});
             this.MtypesdataGridView.DataSource = this.mtypeBindingSource;
-            this.MtypesdataGridView.Location = new System.Drawing.Point(69, 35);
+            this.MtypesdataGridView.Location = new System.Drawing.Point(71, 58);
             this.MtypesdataGridView.Name = "MtypesdataGridView";
             this.MtypesdataGridView.Size = new System.Drawing.Size(736, 189);
             this.MtypesdataGridView.TabIndex = 1;
             this.MtypesdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MtypesdataGridView_CellContentClick);
             this.MtypesdataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.MtypesdataGridView_CellEndEdit);
             this.MtypesdataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.MtypesdataGridView_UserDeletingRow);
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "cost";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            // 
-            // initfee
-            // 
-            this.initfee.DataPropertyName = "initfee";
-            this.initfee.HeaderText = "initfee";
-            this.initfee.Name = "initfee";
-            // 
-            // hoursDataGridViewTextBoxColumn
-            // 
-            this.hoursDataGridViewTextBoxColumn.DataPropertyName = "hours";
-            this.hoursDataGridViewTextBoxColumn.HeaderText = "hours";
-            this.hoursDataGridViewTextBoxColumn.Name = "hoursDataGridViewTextBoxColumn";
-            // 
-            // days
-            // 
-            this.days.DataPropertyName = "days";
-            this.days.HeaderText = "days";
-            this.days.Name = "days";
-            // 
-            // once
-            // 
-            this.once.DataPropertyName = "once";
-            this.once.HeaderText = "once";
-            this.once.Name = "once";
             // 
             // mtypeBindingSource
             // 
@@ -240,6 +196,50 @@
             this.oncecheckBox.Text = "Once";
             this.oncecheckBox.UseVisualStyleBackColor = true;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // costDataGridViewTextBoxColumn
+            // 
+            this.costDataGridViewTextBoxColumn.DataPropertyName = "cost";
+            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
+            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
+            // 
+            // initfee
+            // 
+            this.initfee.DataPropertyName = "initfee";
+            this.initfee.HeaderText = "Initial Fee";
+            this.initfee.Name = "initfee";
+            // 
+            // hoursDataGridViewTextBoxColumn
+            // 
+            this.hoursDataGridViewTextBoxColumn.DataPropertyName = "hours";
+            this.hoursDataGridViewTextBoxColumn.HeaderText = "Hours";
+            this.hoursDataGridViewTextBoxColumn.Name = "hoursDataGridViewTextBoxColumn";
+            // 
+            // days
+            // 
+            this.days.DataPropertyName = "days";
+            this.days.HeaderText = "Days";
+            this.days.Name = "days";
+            // 
+            // once
+            // 
+            this.once.DataPropertyName = "once";
+            this.once.HeaderText = "Once";
+            this.once.Name = "once";
+            // 
             // mtypefrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,16 +283,16 @@
         private System.Windows.Forms.NumericUpDown hoursUpDown;
         private System.Windows.Forms.Button addbut;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn initfee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown ifeenumericUpDown;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown daysnumericUpDown;
         private System.Windows.Forms.CheckBox oncecheckBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn initfee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn days;
         private System.Windows.Forms.DataGridViewCheckBoxColumn once;
     }

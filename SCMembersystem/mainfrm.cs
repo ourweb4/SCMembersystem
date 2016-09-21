@@ -318,7 +318,7 @@ namespace SCMembersystem
             var mtypefrm = new mtypefrm();
 
             mtypefrm.ShowDialog();
-        //    Getmtypes();
+            Getmtypes();
         }
 
         private void systemToolStripMenuItem_Click(object sender, EventArgs e)
@@ -405,7 +405,20 @@ namespace SCMembersystem
 
         private void invoicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             
+             var invrptfrm = new invrptfrm();
+            invrptfrm.ShowDialog();
+        }
+
+        private void membersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var membersrpt = new membersrptfrm();
+            membersrpt.ShowDialog();
+        }
+
+        private void accountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var accountsrpt = new accountsrptfrm();
+            accountsrpt.ShowDialog();
         }
     }
 }

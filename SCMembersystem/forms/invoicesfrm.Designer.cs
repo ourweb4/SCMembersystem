@@ -38,11 +38,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.amtduelab = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paidamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,6 +50,11 @@
             this.addbut = new System.Windows.Forms.Button();
             this.savebut = new System.Windows.Forms.Button();
             this.deletebut = new System.Windows.Forms.Button();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paidamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountnumericUpDown)).BeginInit();
@@ -153,41 +153,6 @@
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // invdateDataGridViewTextBoxColumn
-            // 
-            this.invdateDataGridViewTextBoxColumn.DataPropertyName = "invdate";
-            this.invdateDataGridViewTextBoxColumn.HeaderText = "invdate";
-            this.invdateDataGridViewTextBoxColumn.Name = "invdateDataGridViewTextBoxColumn";
-            this.invdateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // paidamountDataGridViewTextBoxColumn
-            // 
-            this.paidamountDataGridViewTextBoxColumn.DataPropertyName = "paidamount";
-            this.paidamountDataGridViewTextBoxColumn.HeaderText = "paidamount";
-            this.paidamountDataGridViewTextBoxColumn.Name = "paidamountDataGridViewTextBoxColumn";
-            this.paidamountDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // invoiceBindingSource
             // 
@@ -289,6 +254,41 @@
             this.deletebut.UseVisualStyleBackColor = true;
             this.deletebut.Click += new System.EventHandler(this.deletebut_Click);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Invoice No.";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // invdateDataGridViewTextBoxColumn
+            // 
+            this.invdateDataGridViewTextBoxColumn.DataPropertyName = "invdate";
+            this.invdateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.invdateDataGridViewTextBoxColumn.Name = "invdateDataGridViewTextBoxColumn";
+            this.invdateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // paidamountDataGridViewTextBoxColumn
+            // 
+            this.paidamountDataGridViewTextBoxColumn.DataPropertyName = "paidamount";
+            this.paidamountDataGridViewTextBoxColumn.HeaderText = "Paid";
+            this.paidamountDataGridViewTextBoxColumn.Name = "paidamountDataGridViewTextBoxColumn";
+            this.paidamountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // invoicesfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,11 +337,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label amtduelab;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn invdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paidamountDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource invoiceBindingSource;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -354,5 +349,10 @@
         private System.Windows.Forms.Button addbut;
         private System.Windows.Forms.Button savebut;
         private System.Windows.Forms.Button deletebut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paidamountDataGridViewTextBoxColumn;
     }
 }
