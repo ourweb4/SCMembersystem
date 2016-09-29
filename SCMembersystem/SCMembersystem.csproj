@@ -74,6 +74,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -86,6 +87,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSets\AccountDS.cs">
+      <DependentUpon>AccountDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\AccountDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,6 +111,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MembersDS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\newmembersDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>newmembersDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\DBContext.cs" />
     <Compile Include="forms\AboutBox.cs">
       <SubType>Form</SubType>
@@ -120,11 +129,23 @@
     <Compile Include="forms\clubfrm.Designer.cs">
       <DependentUpon>clubfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\commentsfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\commentsfrm.Designer.cs">
+      <DependentUpon>commentsfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Committefrm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\Committefrm.Designer.cs">
       <DependentUpon>Committefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\detailsfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\detailsfrm.Designer.cs">
+      <DependentUpon>detailsfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\invoicesfrm.cs">
       <SubType>Form</SubType>
@@ -174,9 +195,14 @@
     <Compile Include="Migrations\201609081937548_members.Designer.cs">
       <DependentUpon>201609081937548_members.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609281343065_comments.cs" />
+    <Compile Include="Migrations\201609281343065_comments.Designer.cs">
+      <DependentUpon>201609281343065_comments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Club.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Committe.cs" />
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\Member.cs" />
@@ -189,6 +215,12 @@
     </Compile>
     <Compile Include="Reports\accountsrptfrm.Designer.cs">
       <DependentUpon>accountsrptfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\fullmembersrptfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\fullmembersrptfrm.Designer.cs">
+      <DependentUpon>fullmembersrptfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\invrptfrm.cs">
       <SubType>Form</SubType>
@@ -208,6 +240,12 @@
     <Compile Include="Reports\membersrptfrm.Designer.cs">
       <DependentUpon>membersrptfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\newmembersrptfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\newmembersrptfrm.Designer.cs">
+      <DependentUpon>newmembersrptfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UPrint.cs" />
     <EmbeddedResource Include="forms\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
@@ -215,8 +253,14 @@
     <EmbeddedResource Include="forms\clubfrm.resx">
       <DependentUpon>clubfrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\commentsfrm.resx">
+      <DependentUpon>commentsfrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\Committefrm.resx">
       <DependentUpon>Committefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\detailsfrm.resx">
+      <DependentUpon>detailsfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\invoicesfrm.resx">
       <DependentUpon>invoicesfrm.cs</DependentUpon>
@@ -258,6 +302,9 @@
     <EmbeddedResource Include="Migrations\201609081937548_members.resx">
       <DependentUpon>201609081937548_members.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609281343065_comments.resx">
+      <DependentUpon>201609281343065_comments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -265,6 +312,9 @@
     <EmbeddedResource Include="Reports\accounts1.rdlc" />
     <EmbeddedResource Include="Reports\accountsrptfrm.resx">
       <DependentUpon>accountsrptfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\fullmembersrptfrm.resx">
+      <DependentUpon>fullmembersrptfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Invrptfrm.resx">
       <DependentUpon>invrptfrm.cs</DependentUpon>
@@ -277,6 +327,11 @@
       <DependentUpon>membersrptfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\memberrpt.rdlc" />
+    <EmbeddedResource Include="Reports\newmembersrptfrm.resx">
+      <DependentUpon>newmembersrptfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\newmembersrpt.rdlc" />
+    <EmbeddedResource Include="Reports\fulmembers.rdlc" />
     <None Include="DataSets\AccountDS.xsc">
       <DependentUpon>AccountDS.xsd</DependentUpon>
     </None>
@@ -310,6 +365,17 @@
     <None Include="DataSets\MembersDS.xss">
       <DependentUpon>MembersDS.xsd</DependentUpon>
     </None>
+    <None Include="DataSets\newmembersDS.xsc">
+      <DependentUpon>newmembersDS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\newmembersDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>newmembersDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\newmembersDS.xss">
+      <DependentUpon>newmembersDS.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -325,6 +391,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SCMembersystem.Models.Comment.datasource" />
     <None Include="SCMembersystem.Models.Committe.datasource" />
     <None Include="SCMembersystem.Models.Invoice.datasource" />
     <None Include="SCMembersystem.Models.Member.datasource" />

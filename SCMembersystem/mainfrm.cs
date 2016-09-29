@@ -1,4 +1,17 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : SCMembersystem
+// Author           : Bill
+// Created          : 08-08-2016
+//
+// Last Modified By : Bill
+// Last Modified On : 09-29-2016
+// ***********************************************************************
+// <copyright file="mainfrm.cs" company="Ourweb.net  --  508-829-2005">
+//     Copyright ©  2016
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,18 +27,34 @@ using SCMembersystem.Reports;
 
 namespace SCMembersystem
 {
+    /// <summary>
+    /// Class mainfrm.
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class mainfrm : Form
     {
+        /// <summary>
+        /// The currid
+        /// </summary>
         public int currid = 0;
+        /// <summary>
+        /// The curr member
+        /// </summary>
         private Member currMember = new Member();
 
-         
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="mainfrm"/> class.
+        /// </summary>
         public mainfrm()
         {
             InitializeComponent();
         }
 
-   
+
+        /// <summary>
+        /// Getmtypeses this instance.
+        /// </summary>
         private void Getmtypes()
         {
             //mtypeBindingSource.DataSource = null;
@@ -41,6 +70,10 @@ namespace SCMembersystem
             }
         }
 
+        /// <summary>
+        /// Gets the members.
+        /// </summary>
+        /// <param name="lname">The lname.</param>
         private void GetMembers(string lname = "")
         {
             if (lname == "")
@@ -70,6 +103,9 @@ namespace SCMembersystem
         //    Getmtypes();
         }
 
+        /// <summary>
+        /// Loadmembers this instance.
+        /// </summary>
         private void loadmember()
         {
             mtypcomboBox.SelectedValue = currMember.mtype;
@@ -101,6 +137,9 @@ namespace SCMembersystem
            
         }
 
+        /// <summary>
+        /// Savemembers this instance.
+        /// </summary>
         private void savemember()
         {
             if (mtypcomboBox.SelectedValue != null) currMember.mtype = (int) mtypcomboBox.SelectedValue;
@@ -130,18 +169,33 @@ namespace SCMembersystem
             currMember.Id = currid;
         }
 
+        /// <summary>
+        /// Handles the TextChanged event of the searchtxt control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void searchtxt_TextChanged(object sender, EventArgs e)
         {
             var lname = searchtxt.Text;
             GetMembers(lname);
         }
 
+        /// <summary>
+        /// Handles the Load event of the mainfrm control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void mainfrm_Load(object sender, EventArgs e)
         {
             Getmtypes();
             GetMembers("");
         }
 
+        /// <summary>
+        /// Handles the Click event of the searchbut control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void searchbut_Click(object sender, EventArgs e)
         {
 
@@ -149,66 +203,131 @@ namespace SCMembersystem
             GetMembers(lname);
         }
 
+        /// <summary>
+        /// Handles the Click event of the label14 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void label14_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the label13 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void label13_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the label12 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void label12_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the label11 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void label11_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the label10 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void label10_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the label9 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void label9_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the label8 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void label8_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the label7 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void label7_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the label6 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void label6_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the label5 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void label5_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the CheckedChanged event of the checkBox1 control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the SelectedIndexChanged event of the mtypcomboBox control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void mtypcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the RowEnter event of the membersdataGridView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DataGridViewCellEventArgs"/> instance containing the event data.</param>
         private void membersdataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             var row = e.RowIndex;
@@ -230,6 +349,11 @@ namespace SCMembersystem
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the addbut control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void addbut_Click(object sender, EventArgs e)
         {
             currMember= new Member();
@@ -245,6 +369,11 @@ namespace SCMembersystem
             
         }
 
+        /// <summary>
+        /// Handles the Click event of the deletebut control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void deletebut_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure?", "Delete", MessageBoxButtons.YesNo) == DialogResult.No)
@@ -273,6 +402,11 @@ namespace SCMembersystem
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the savebut control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void savebut_Click(object sender, EventArgs e)
         {
             var context=new DBContext();
@@ -298,6 +432,11 @@ namespace SCMembersystem
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the invoicesbut control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void invoicesbut_Click(object sender, EventArgs e)
         {
             var invfrm = new invoicesfrm(currid);
@@ -306,6 +445,11 @@ namespace SCMembersystem
             loadmember();
         }
 
+        /// <summary>
+        /// Handles the Click event of the aboutToolStripMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var helpbox = new AboutBox();
@@ -313,6 +457,11 @@ namespace SCMembersystem
             helpbox.ShowDialog();
         }
 
+        /// <summary>
+        /// Handles the Click event of the membershipTypesToolStripMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void membershipTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var mtypefrm = new mtypefrm();
@@ -321,18 +470,33 @@ namespace SCMembersystem
             Getmtypes();
         }
 
+        /// <summary>
+        /// Handles the Click event of the systemToolStripMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void systemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var clubfrm = new clubfrm();
             clubfrm.ShowDialog();
         }
 
+        /// <summary>
+        /// Handles the Click event of the lettersToolStripMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void lettersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var letterfrm = new lettersfrm();
             letterfrm.ShowDialog();
         }
 
+        /// <summary>
+        /// Handles the Click event of the processInvoicesToolStripMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void processInvoicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var processfrm = new processfrm();
@@ -340,17 +504,32 @@ namespace SCMembersystem
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the quitToolStripMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Use this since we are a WinForms app
             System.Windows.Forms.Application.Exit();
         }
 
+        /// <summary>
+        /// Handles the ValueChanged event of the dobdateTimePicker control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void dobdateTimePicker_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Handles the CellContentClick event of the membersdataGridView control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DataGridViewCellEventArgs"/> instance containing the event data.</param>
         private void membersdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -358,15 +537,27 @@ namespace SCMembersystem
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the paybut control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void paybut_Click(object sender, EventArgs e)
         {
+            decimal amt;
             var context = new DBContext();
+            var invoices = context.Invoices.Where(x => x.memberId == currid);
             var mtypeid = currMember.mtype;
-            var mtype = context.Mtypes.SingleOrDefault(x => x.Id == mtypeid); // get  fee
+            var mtype = context.Mtypes.SingleOrDefault(x => x.Id == mtypeid); // get  fees
             if (mtype != null)
             {
-                var amt = mtype.cost + mtype.initfee;
-                var minhours = mtype.hours;
+                 amt = mtype.cost;
+                if (invoices.Count() == 0)  //see if new member
+                {
+                    amt += mtype.initfee; // add on the  new  member  fee
+                }
+            
+            var minhours = mtype.hours;
                 var days = mtype.days;
                 if (!mtype.once)
                 {
@@ -374,10 +565,9 @@ namespace SCMembersystem
                     crinv.memberId = currMember.Id;
                     crinv.invdate = DateTime.Now;
                     string description;
-                    decimal tot;
 
+                    var tot = amt;
 
-                    tot = amt;
                     description = string.Format("Membership Type: {0} ",
                         mtype.name);
 
@@ -403,22 +593,94 @@ namespace SCMembersystem
 
         }
 
+        /// <summary>
+        /// Handles the Click event of the invoicesToolStripMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void invoicesToolStripMenuItem_Click(object sender, EventArgs e)
         {
              var invrptfrm = new invrptfrm();
             invrptfrm.ShowDialog();
         }
 
+        /// <summary>
+        /// Handles the Click event of the membersToolStripMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void membersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var membersrpt = new membersrptfrm();
             membersrpt.ShowDialog();
         }
 
+        /// <summary>
+        /// Handles the Click event of the accountsToolStripMenuItem control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void accountsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var accountsrpt = new accountsrptfrm();
             accountsrpt.ShowDialog();
+        }
+
+        private void newMembersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var newmem = new newmembersrptfrm();
+            newmem.ShowDialog();
+        }
+
+        private void fullMembersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var fullmem =  new fullmembersrptfrm();
+
+            fullmem.ShowDialog();
+        }
+
+        private void detailsbut_Click(object sender, EventArgs e)
+        {
+            var detailfrm = new detailsfrm(currid);
+            detailfrm.ShowDialog();
+
+
+
+            using (var context = new DBContext())
+            {
+                currMember = context.Members.SingleOrDefault(r => r.Id == currid);
+
+
+            }
+
+            if (currMember != null)
+            {
+                loadmember();
+            }
+
+
+        }
+
+        private void commentsbut_Click(object sender, EventArgs e)
+        {
+            var commentfrm = new commentsfrm(currid);
+            commentfrm.ShowDialog();
+
+
+
+            using (var context = new DBContext())
+            {
+                currMember = context.Members.SingleOrDefault(r => r.Id == currid);
+
+
+            }
+
+            if (currMember != null)
+            {
+                loadmember();
+            }
+
+
         }
     }
 }

@@ -96,6 +96,9 @@
             this.lettersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.membersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newMembersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fullMembersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fishingcheckBox = new System.Windows.Forms.CheckBox();
@@ -105,7 +108,8 @@
             this.invoicesbut = new System.Windows.Forms.Button();
             this.paybut = new System.Windows.Forms.Button();
             this.activecheckBox = new System.Windows.Forms.CheckBox();
-            this.accountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.commentsbut = new System.Windows.Forms.Button();
+            this.detailsbut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.membersdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
@@ -557,7 +561,7 @@
             // 
             // savebut
             // 
-            this.savebut.Location = new System.Drawing.Point(284, 593);
+            this.savebut.Location = new System.Drawing.Point(290, 594);
             this.savebut.Name = "savebut";
             this.savebut.Size = new System.Drawing.Size(75, 23);
             this.savebut.TabIndex = 39;
@@ -659,7 +663,9 @@
             this.lettersToolStripMenuItem,
             this.invoicesToolStripMenuItem,
             this.membersToolStripMenuItem,
-            this.accountsToolStripMenuItem});
+            this.accountsToolStripMenuItem,
+            this.newMembersToolStripMenuItem,
+            this.fullMembersToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -682,8 +688,29 @@
             // 
             this.membersToolStripMenuItem.Name = "membersToolStripMenuItem";
             this.membersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.membersToolStripMenuItem.Text = "Members";
+            this.membersToolStripMenuItem.Text = "Members - Bar";
             this.membersToolStripMenuItem.Click += new System.EventHandler(this.membersToolStripMenuItem_Click);
+            // 
+            // accountsToolStripMenuItem
+            // 
+            this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
+            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.accountsToolStripMenuItem.Text = "Accounts";
+            this.accountsToolStripMenuItem.Click += new System.EventHandler(this.accountsToolStripMenuItem_Click);
+            // 
+            // newMembersToolStripMenuItem
+            // 
+            this.newMembersToolStripMenuItem.Name = "newMembersToolStripMenuItem";
+            this.newMembersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newMembersToolStripMenuItem.Text = "New Members";
+            this.newMembersToolStripMenuItem.Click += new System.EventHandler(this.newMembersToolStripMenuItem_Click);
+            // 
+            // fullMembersToolStripMenuItem
+            // 
+            this.fullMembersToolStripMenuItem.Name = "fullMembersToolStripMenuItem";
+            this.fullMembersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fullMembersToolStripMenuItem.Text = "Full Members";
+            this.fullMembersToolStripMenuItem.Click += new System.EventHandler(this.fullMembersToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -771,18 +798,33 @@
             this.activecheckBox.Text = "Active";
             this.activecheckBox.UseVisualStyleBackColor = true;
             // 
-            // accountsToolStripMenuItem
+            // commentsbut
             // 
-            this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
-            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.accountsToolStripMenuItem.Text = "Accounts";
-            this.accountsToolStripMenuItem.Click += new System.EventHandler(this.accountsToolStripMenuItem_Click);
+            this.commentsbut.Location = new System.Drawing.Point(316, 623);
+            this.commentsbut.Name = "commentsbut";
+            this.commentsbut.Size = new System.Drawing.Size(75, 23);
+            this.commentsbut.TabIndex = 51;
+            this.commentsbut.Text = "Comments";
+            this.commentsbut.UseVisualStyleBackColor = true;
+            this.commentsbut.Click += new System.EventHandler(this.commentsbut_Click);
+            // 
+            // detailsbut
+            // 
+            this.detailsbut.Location = new System.Drawing.Point(417, 623);
+            this.detailsbut.Name = "detailsbut";
+            this.detailsbut.Size = new System.Drawing.Size(75, 23);
+            this.detailsbut.TabIndex = 52;
+            this.detailsbut.Text = "Details";
+            this.detailsbut.UseVisualStyleBackColor = true;
+            this.detailsbut.Click += new System.EventHandler(this.detailsbut_Click);
             // 
             // mainfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 787);
+            this.Controls.Add(this.detailsbut);
+            this.Controls.Add(this.commentsbut);
             this.Controls.Add(this.activecheckBox);
             this.Controls.Add(this.paybut);
             this.Controls.Add(this.invoicesbut);
@@ -929,6 +971,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hours;
         private System.Windows.Forms.DataGridViewCheckBoxColumn active;
         private System.Windows.Forms.ToolStripMenuItem accountsToolStripMenuItem;
+        private System.Windows.Forms.Button commentsbut;
+        private System.Windows.Forms.Button detailsbut;
+        private System.Windows.Forms.ToolStripMenuItem newMembersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fullMembersToolStripMenuItem;
         //  private System.Windows.Forms.Button paybut;
     }
 }

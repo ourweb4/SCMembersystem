@@ -4,7 +4,7 @@
 // Created          : 08-08-2016
 //
 // Last Modified By : Bill Banks - office@ourweb.net
-// Last Modified On : 08-18-2016
+// Last Modified On : 09-27-2016
 // ***********************************************************************
 // <copyright file="DBContext.cs" company="Ourweb.net  --  508-829-2005">
 //     Copyright ©  2016
@@ -69,7 +69,11 @@ namespace SCMembersystem.Data
         /// </summary>
         /// <value>The clubs.</value>
         public DbSet<Club> Clubs { get; set; }
-
+        /// <summary>
+        /// Gets or sets the comments.
+        /// </summary>
+        /// <value>The comments.</value>
+        public DbSet<Comment> Comments { get; set; }
         /// <summary>
         /// This method is called when the model for a derived context has been initialized, but
         /// before the model has been locked down and used to initialize the context.  The default

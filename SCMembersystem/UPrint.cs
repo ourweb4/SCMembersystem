@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
 // Assembly         : SCMembersystem
-// Author           : Bill Banks - office@ourweb.net
+// Author           : Bill
 // Created          : 08-20-2016
 //
-// Last Modified By : Bill Banks - office@ourweb.net
-// Last Modified On : 08-24-2016
+// Last Modified By : Bill
+// Last Modified On : 09-25-2016
 // ***********************************************************************
 // <copyright file="UPrint.cs" company="Ourweb.net  --  508-829-2005">
 //     Copyright ©  2016
@@ -53,6 +53,56 @@ namespace SCMembersystem
         /// Gets or sets the font.
         /// </summary>
         /// <value>The font.</value>
+        private int _leftmargin = 10;
+
+        /// <summary>
+        /// The topmargin
+        /// </summary>
+        private int _topmargin = 10;
+        /// <summary>
+        /// The linespacing
+        /// </summary>
+        private int _linespacing = 5;
+
+        /// <summary>
+        /// Gets or sets the leftmargin.
+        /// </summary>
+        /// <value>The leftmargin.</value>
+        public int leftmargin
+        {
+            get
+            {
+                return _leftmargin;
+                
+            }
+            set
+            {
+                _leftmargin = value;
+                
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the topmargin.
+        /// </summary>
+        /// <value>The topmargin.</value>
+        public int topmargin
+        {
+            get
+            {
+                return _topmargin;
+                
+            }
+            set
+            {
+                _topmargin = value; 
+                
+            }
+        }
+        /// <summary>
+        /// Gets or sets the font.
+        /// </summary>
+        /// <value>The font.</value>
         public Font Font
         {
             get
@@ -67,7 +117,24 @@ namespace SCMembersystem
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UPrint"/> class.
+        /// Gets or sets the linespacing.
+        /// </summary>
+        /// <value>The linespacing.</value>
+        public int Linespacing
+        {
+            get
+            {
+                return _linespacing;
+            }
+
+            set
+            {
+                _linespacing = value;
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UPrint" /> class.
         /// </summary>
         public UPrint()
         {
@@ -112,13 +179,13 @@ namespace SCMembersystem
         /// Handles the PrintPage event of the PrintDocument control.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="PrintPageEventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="PrintPageEventArgs" /> instance containing the event data.</param>
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             Graphics graphics = e.Graphics;
 
-            int startx = 10;
-            int starty = 10;
+            int startx = _leftmargin;
+            int starty = _topmargin;
             int offset = 0;
 
             float fonthight = Font.GetHeight();
@@ -128,7 +195,7 @@ namespace SCMembersystem
             {
 
                 graphics.DrawString(line,Font,new SolidBrush(Color.Black), new Point(startx,starty+offset) );
-                offset += (int) fonthight + 5;
+                offset += (int) fonthight + _linespacing;
 
             }
 

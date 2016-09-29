@@ -4,7 +4,7 @@
 // Created          : 08-23-2016
 //
 // Last Modified By : Bill Banks - office@ourweb.net
-// Last Modified On : 08-24-2016
+// Last Modified On : 08-22-2016
 // ***********************************************************************
 // <copyright file="lettersfrm.cs" company="Ourweb.net  --  508-829-2005">
 //     Copyright ©  2016
@@ -65,16 +65,18 @@ namespace SCMembersystem.Reports
 
              pr.writeline(clubinfo.clubname);
              pr.writeline(clubinfo.address);
-             pr.writeline(string.Format("{0}, {1}  {2}", clubinfo.city, clubinfo.state, clubinfo.state));
-             pr.writeline(string.Format(" Website: {0} Email: {1} ", clubinfo.email, clubinfo.email));
+             pr.writeline(string.Format("{0}, {1}  {2}", clubinfo.city, clubinfo.state, clubinfo.zip));
+             pr.writeline(string.Format(" Website: {0} Email: {1} ", clubinfo.website, clubinfo.email));
+            pr.writeline("");
             pr.writeline("");
             pr.writeline("");
             pr.writeline(DateTime.Today.ToShortDateString());
             pr.writeline("");
             pr.writeline("");
+            pr.writeline("");
             pr.writeline(string.Format("{0} {1}", member.firstname, member.lastname));
             pr.writeline(member.address);
-            pr.writeline(string.Format("{0}, {1}  {2}", member.city, member.state, member.state));
+            pr.writeline(string.Format("{0}, {1}  {2}", member.city, member.state, member.zip));
             pr.writeline("");
             pr.writeline("");
 
@@ -125,8 +127,6 @@ namespace SCMembersystem.Reports
 
 
             }
-            
-
                 
         }
     }

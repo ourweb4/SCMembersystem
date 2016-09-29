@@ -4,7 +4,7 @@
 // Created          : 08-09-2016
 //
 // Last Modified By : Bill Banks - office@ourweb.net
-// Last Modified On : 09-08-2016
+// Last Modified On : 09-28-2016
 // ***********************************************************************
 // <copyright file="Member.cs" company="Ourweb.net  --  508-829-2005">
 //     Copyright ©  2016
@@ -201,8 +201,56 @@ namespace SCMembersystem.Models
         /// </summary>
         /// <value><c>true</c> if active; otherwise, <c>false</c>.</value>
         public bool active { get; set; }
+        /// <summary>
+        /// Gets or sets the keycard.
+        /// </summary>
+        /// <value>The keycard.</value>
+        public string keycard { get; set; }
+        /// <summary>
+        /// Gets or sets the keymain.
+        /// </summary>
+        /// <value>The keymain.</value>
+        public string keymain { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="Member" /> is mainactive.
+        /// </summary>
+        /// <value><c>true</c> if mainactive; otherwise, <c>false</c>.</value>
+        public bool mainactive { get; set; }
+        /// <summary>
+        /// Gets or sets the keyrange.
+        /// </summary>
+        /// <value>The keyrange.</value>
+        public string keyrange { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="Member" /> is rangeactive.
+        /// </summary>
+        /// <value><c>true</c> if rangeactive; otherwise, <c>false</c>.</value>
+        public bool rangeactive { get; set; }
 
-
-
+        /// <summary>
+        /// Gets or sets the fob.
+        /// </summary>
+        /// <value>The fob.</value>
+        public string fob { get; set; }
+        /// <summary>
+        /// Gets or sets the fobmain.
+        /// </summary>
+        /// <value>The fobmain.</value>
+        public string fobmain { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="Member"/> is fobmainactive.
+        /// </summary>
+        /// <value><c>true</c> if fobmainactive; otherwise, <c>false</c>.</value>
+        public bool fobmainactive { get; set; }
+        /// <summary>
+        /// Gets or sets the fobrange.
+        /// </summary>
+        /// <value>The fobrange.</value>
+        public string fobrange { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="Member"/> is fobrangractive.
+        /// </summary>
+        /// <value><c>true</c> if fobrangractive; otherwise, <c>false</c>.</value>
+        public bool fobrangractive { get; set; }
     }
 }
