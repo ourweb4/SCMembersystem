@@ -37,11 +37,7 @@
             this.newbut = new System.Windows.Forms.Button();
             this.savebut = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataTable1TableAdapter1 = new SCMembersystem.DataSets.newmembersDSTableAdapters.DataTable1TableAdapter();
             this.commentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -94,7 +90,7 @@
             this.newbut.Name = "newbut";
             this.newbut.Size = new System.Drawing.Size(75, 23);
             this.newbut.TabIndex = 5;
-            this.newbut.Text = "Add";
+            this.newbut.Text = "New";
             this.newbut.UseVisualStyleBackColor = true;
             this.newbut.Click += new System.EventHandler(this.newbut_Click);
             // 
@@ -112,48 +108,14 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.cdateDataGridViewTextBoxColumn,
-            this.commentDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.commentBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 62);
+            this.dataGridView1.Location = new System.Drawing.Point(31, 60);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(861, 191);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             this.dataGridView1.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView1_RowsRemoved);
-            // 
-            // dataTable1TableAdapter1
-            // 
-            this.dataTable1TableAdapter1.ClearBeforeFill = true;
-            // 
-            // commentBindingSource
-            // 
-            this.commentBindingSource.DataSource = typeof(SCMembersystem.Models.Comment);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cdateDataGridViewTextBoxColumn
-            // 
-            this.cdateDataGridViewTextBoxColumn.DataPropertyName = "cdate";
-            this.cdateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.cdateDataGridViewTextBoxColumn.Name = "cdateDataGridViewTextBoxColumn";
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "comment";
-            this.commentDataGridViewTextBoxColumn.FillWeight = 255F;
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            this.commentDataGridViewTextBoxColumn.Width = 255;
             // 
             // commentsfrm
             // 
@@ -192,6 +154,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource commentBindingSource;
-        private DataSets.newmembersDSTableAdapters.DataTable1TableAdapter dataTable1TableAdapter1;
     }
 }

@@ -63,15 +63,18 @@ namespace SCMembersystem.Reports
             
              UPrint pr = new UPrint();
 
+            pr.topmargin = 45;
+            pr.leftmargin = 35;
+
              pr.writeline(clubinfo.clubname);
              pr.writeline(clubinfo.address);
              pr.writeline(string.Format("{0}, {1}  {2}", clubinfo.city, clubinfo.state, clubinfo.zip));
              pr.writeline(string.Format(" Website: {0} Email: {1} ", clubinfo.website, clubinfo.email));
             pr.writeline("");
             pr.writeline("");
-            pr.writeline("");
+            //pr.writeline("");
             pr.writeline(DateTime.Today.ToShortDateString());
-            pr.writeline("");
+            //pr.writeline("");
             pr.writeline("");
             pr.writeline("");
             pr.writeline(string.Format("{0} {1}", member.firstname, member.lastname));
@@ -80,9 +83,12 @@ namespace SCMembersystem.Reports
             pr.writeline("");
             pr.writeline("");
 
+            decimal per = clubinfo.hours_percent;
+            decimal  fee = per / 100 * mtype.cost;
+
             if (clubinfo.trackhours)
             {
-                pr.writeline(string.Format("Your membership fee of {0:C} is up  for renewal. If you dont turn in your hours tracking card with {1} hours on it, there will  be additional fee of {2:C}", mtype.cost, mtype.hours, clubinfo.hours_percent/100*mtype.cost));
+                pr.writeline(string.Format("Your membership fee of {0:C} is up  for renewal. \n If you dont turn in your hours tracking card with {1} hours on it,\n  there will  be additional fee of {2:C}", mtype.cost, mtype.hours,fee));
             }
             else
             {
@@ -118,16 +124,73 @@ namespace SCMembersystem.Reports
 
                 }
 
-
-
-
-
-
-
-
-
             }
                 
+        }
+        private void emailetter(Member member, Mtype mtype)
+        {
+
+            USendMail pr = new USendMail();
+
+            pr.To = member.email;
+            pr.Subject= String.Format("Renewal Letter from {0}",clubinfo.clubname);
+       
+            pr.emailine(clubinfo.clubname);
+            pr.emailine(clubinfo.address);
+            pr.emailine(string.Format("{0}, {1}  {2}", clubinfo.city, clubinfo.state, clubinfo.zip));
+            pr.emailine(string.Format(" Website: {0} Email: {1} ", clubinfo.website, clubinfo.email));
+            pr.emailine("");
+            pr.emailine("");
+            //pr.emailine("");
+            pr.emailine(DateTime.Today.ToShortDateString());
+            //pr.emailine("");
+            pr.emailine("");
+            pr.emailine("");
+            pr.emailine(string.Format("{0} {1}", member.firstname, member.lastname));
+            pr.emailine(member.address);
+            pr.emailine(string.Format("{0}, {1}  {2}", member.city, member.state, member.zip));
+            pr.emailine("");
+            pr.emailine("");
+
+            decimal per = clubinfo.hours_percent;
+            decimal fee = per / 100 * mtype.cost;
+
+            if (clubinfo.trackhours)
+            {
+                pr.emailine(string.Format("Your membership fee of {0:C} is up  for renewal. \n If you dont turn in your hours tracking card with {1} hours on it,\n  there will  be additional fee of {2:C}", mtype.cost, mtype.hours, fee));
+            }
+            else
+            {
+                pr.emailine(string.Format("Your membership fee of {0:C} is up  for renewal", mtype.cost));
+            }
+
+            pr.send();
+
+        }
+
+        private void emailbut_Click(object sender, EventArgs e)
+        {
+            var from = fromdateTimePicker.Value.AddDays(-1);
+            var to = todateTimePicker.Value.AddDays(1);
+            using (var context = new DBContext())
+            {
+                var members = context.Members.Where(r => r.nextbill > from && r.nextbill < to && r.active)
+                    .OrderBy(r => r.lastname)
+                    .ToList();         //get members to letter
+
+
+
+                foreach (var member in members)
+                {
+                    var mtypeid = member.mtype;
+                    var mtype = context.Mtypes.SingleOrDefault(x => x.Id == mtypeid); // get  fee
+                    if (member.email.Length > 0)
+                        emailetter(member, mtype);
+
+                }
+
+            }
+
         }
     }
 }

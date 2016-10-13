@@ -682,5 +682,22 @@ namespace SCMembersystem
 
 
         }
+
+        private void quitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void emailSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var mailfrm = new Mailfrm();
+            mailfrm.ShowDialog();
+        }
+
+        private void countMembersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var crpt = new countfrm();
+            crpt.ShowDialog();
+        }
     }
 }

@@ -92,6 +92,8 @@
             this.membershipTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.processInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emailSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lettersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,12 +112,15 @@
             this.activecheckBox = new System.Windows.Forms.CheckBox();
             this.commentsbut = new System.Windows.Forms.Button();
             this.detailsbut = new System.Windows.Forms.Button();
+            this.countMembersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataSet11 = new SCMembersystem.DataSets.DataSet1();
             ((System.ComponentModel.ISupportInitialize)(this.membersdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoursnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amountnumericUpDown)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.SuspendLayout();
             // 
             // membersdataGridView
@@ -136,7 +141,7 @@
             this.hours,
             this.active});
             this.membersdataGridView.DataSource = this.memberBindingSource;
-            this.membersdataGridView.Location = new System.Drawing.Point(25, 65);
+            this.membersdataGridView.Location = new System.Drawing.Point(28, 64);
             this.membersdataGridView.Name = "membersdataGridView";
             this.membersdataGridView.ReadOnly = true;
             this.membersdataGridView.Size = new System.Drawing.Size(937, 229);
@@ -624,7 +629,9 @@
             this.systemToolStripMenuItem,
             this.membershipTypesToolStripMenuItem,
             this.processInvoicesToolStripMenuItem,
-            this.quitToolStripMenuItem});
+            this.quitToolStripMenuItem,
+            this.emailSettingsToolStripMenuItem,
+            this.quitToolStripMenuItem1});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -657,6 +664,20 @@
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
+            // emailSettingsToolStripMenuItem
+            // 
+            this.emailSettingsToolStripMenuItem.Name = "emailSettingsToolStripMenuItem";
+            this.emailSettingsToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.emailSettingsToolStripMenuItem.Text = "email Settings";
+            this.emailSettingsToolStripMenuItem.Click += new System.EventHandler(this.emailSettingsToolStripMenuItem_Click);
+            // 
+            // quitToolStripMenuItem1
+            // 
+            this.quitToolStripMenuItem1.Name = "quitToolStripMenuItem1";
+            this.quitToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
+            this.quitToolStripMenuItem1.Text = "Quit";
+            this.quitToolStripMenuItem1.Click += new System.EventHandler(this.quitToolStripMenuItem1_Click);
+            // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -665,7 +686,8 @@
             this.membersToolStripMenuItem,
             this.accountsToolStripMenuItem,
             this.newMembersToolStripMenuItem,
-            this.fullMembersToolStripMenuItem});
+            this.fullMembersToolStripMenuItem,
+            this.countMembersToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -673,42 +695,42 @@
             // lettersToolStripMenuItem
             // 
             this.lettersToolStripMenuItem.Name = "lettersToolStripMenuItem";
-            this.lettersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lettersToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.lettersToolStripMenuItem.Text = "Letters";
             this.lettersToolStripMenuItem.Click += new System.EventHandler(this.lettersToolStripMenuItem_Click);
             // 
             // invoicesToolStripMenuItem
             // 
             this.invoicesToolStripMenuItem.Name = "invoicesToolStripMenuItem";
-            this.invoicesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.invoicesToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.invoicesToolStripMenuItem.Text = "Invoices";
             this.invoicesToolStripMenuItem.Click += new System.EventHandler(this.invoicesToolStripMenuItem_Click);
             // 
             // membersToolStripMenuItem
             // 
             this.membersToolStripMenuItem.Name = "membersToolStripMenuItem";
-            this.membersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.membersToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.membersToolStripMenuItem.Text = "Members - Bar";
             this.membersToolStripMenuItem.Click += new System.EventHandler(this.membersToolStripMenuItem_Click);
             // 
             // accountsToolStripMenuItem
             // 
             this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
-            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.accountsToolStripMenuItem.Text = "Accounts";
             this.accountsToolStripMenuItem.Click += new System.EventHandler(this.accountsToolStripMenuItem_Click);
             // 
             // newMembersToolStripMenuItem
             // 
             this.newMembersToolStripMenuItem.Name = "newMembersToolStripMenuItem";
-            this.newMembersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newMembersToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.newMembersToolStripMenuItem.Text = "New Members";
             this.newMembersToolStripMenuItem.Click += new System.EventHandler(this.newMembersToolStripMenuItem_Click);
             // 
             // fullMembersToolStripMenuItem
             // 
             this.fullMembersToolStripMenuItem.Name = "fullMembersToolStripMenuItem";
-            this.fullMembersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fullMembersToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.fullMembersToolStripMenuItem.Text = "Full Members";
             this.fullMembersToolStripMenuItem.Click += new System.EventHandler(this.fullMembersToolStripMenuItem_Click);
             // 
@@ -818,6 +840,18 @@
             this.detailsbut.UseVisualStyleBackColor = true;
             this.detailsbut.Click += new System.EventHandler(this.detailsbut_Click);
             // 
+            // countMembersToolStripMenuItem
+            // 
+            this.countMembersToolStripMenuItem.Name = "countMembersToolStripMenuItem";
+            this.countMembersToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.countMembersToolStripMenuItem.Text = "Count Members";
+            this.countMembersToolStripMenuItem.Click += new System.EventHandler(this.countMembersToolStripMenuItem_Click);
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // mainfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -888,6 +922,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.amountnumericUpDown)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -975,6 +1010,10 @@
         private System.Windows.Forms.Button detailsbut;
         private System.Windows.Forms.ToolStripMenuItem newMembersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fullMembersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem emailSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem countMembersToolStripMenuItem;
+        private DataSets.DataSet1 dataSet11;
         //  private System.Windows.Forms.Button paybut;
     }
 }

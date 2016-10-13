@@ -34,6 +34,7 @@
             this.fromdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.todateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.printbutton = new System.Windows.Forms.Button();
+            this.emailbut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -88,11 +89,22 @@
             this.printbutton.UseVisualStyleBackColor = true;
             this.printbutton.Click += new System.EventHandler(this.printbutton_Click);
             // 
+            // emailbut
+            // 
+            this.emailbut.Location = new System.Drawing.Point(447, 328);
+            this.emailbut.Name = "emailbut";
+            this.emailbut.Size = new System.Drawing.Size(75, 23);
+            this.emailbut.TabIndex = 6;
+            this.emailbut.Text = "Email";
+            this.emailbut.UseVisualStyleBackColor = true;
+            this.emailbut.Click += new System.EventHandler(this.emailbut_Click);
+            // 
             // lettersfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1074, 504);
+            this.Controls.Add(this.emailbut);
             this.Controls.Add(this.printbutton);
             this.Controls.Add(this.todateTimePicker);
             this.Controls.Add(this.fromdateTimePicker);
@@ -115,5 +127,6 @@
         private System.Windows.Forms.DateTimePicker fromdateTimePicker;
         private System.Windows.Forms.DateTimePicker todateTimePicker;
         private System.Windows.Forms.Button printbutton;
+        private System.Windows.Forms.Button emailbut;
     }
 }

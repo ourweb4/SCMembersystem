@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
+    <PublishUrl>C:\vcprojects\SCMembersystem\publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,10 +23,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -51,6 +51,24 @@
   <PropertyGroup>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>44C58A924E9A77BFF675675351345B291F6A09B9</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SCMembersystem_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -66,12 +84,9 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SKM, Version=4.0.1.2, Culture=neutral, PublicKeyToken=7fb118a02d446589, processorArchitecture=MSIL">
-      <HintPath>..\packages\SKGLExtension.4.0.1.2\lib\SKM.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.ServiceProcess" />
@@ -94,6 +109,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\CountDS.cs">
+      <DependentUpon>CountDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\CountDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountDS.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSets\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -153,6 +176,18 @@
     <Compile Include="forms\invoicesfrm.Designer.cs">
       <DependentUpon>invoicesfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\keyfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\keyfrm.Designer.cs">
+      <DependentUpon>keyfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Mailfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Mailfrm.Designer.cs">
+      <DependentUpon>Mailfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\MtypeFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +240,7 @@
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Committe.cs" />
     <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\mailsettings.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Mtype.cs" />
     <Compile Include="Models\OLS.cs" />
@@ -215,6 +251,12 @@
     </Compile>
     <Compile Include="Reports\accountsrptfrm.Designer.cs">
       <DependentUpon>accountsrptfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\countfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\countfrm.Designer.cs">
+      <DependentUpon>countfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\fullmembersrptfrm.cs">
       <SubType>Form</SubType>
@@ -247,6 +289,7 @@
       <DependentUpon>newmembersrptfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="UPrint.cs" />
+    <Compile Include="USendMail.cs" />
     <EmbeddedResource Include="forms\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +307,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\invoicesfrm.resx">
       <DependentUpon>invoicesfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\keyfrm.resx">
+      <DependentUpon>keyfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Mailfrm.resx">
+      <DependentUpon>Mailfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\MtypeFrm.resx">
       <DependentUpon>MtypeFrm.cs</DependentUpon>
@@ -313,6 +362,9 @@
     <EmbeddedResource Include="Reports\accountsrptfrm.resx">
       <DependentUpon>accountsrptfrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\countfrm.resx">
+      <DependentUpon>countfrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\fullmembersrptfrm.resx">
       <DependentUpon>fullmembersrptfrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,6 +384,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\newmembersrpt.rdlc" />
     <EmbeddedResource Include="Reports\fulmembers.rdlc" />
+    <EmbeddedResource Include="Reports\countrpt.rdlc" />
     <None Include="DataSets\AccountDS.xsc">
       <DependentUpon>AccountDS.xsd</DependentUpon>
     </None>
@@ -342,6 +395,17 @@
     </None>
     <None Include="DataSets\AccountDS.xss">
       <DependentUpon>AccountDS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CountDS.xsc">
+      <DependentUpon>CountDS.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CountDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CountDS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\CountDS.xss">
+      <DependentUpon>CountDS.xsd</DependentUpon>
     </None>
     <None Include="DataSets\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -377,6 +441,7 @@
       <DependentUpon>newmembersDS.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -396,6 +461,7 @@
     <None Include="SCMembersystem.Models.Invoice.datasource" />
     <None Include="SCMembersystem.Models.Member.datasource" />
     <None Include="SCMembersystem.Models.Mtype.datasource" />
+    <None Include="SCMembersystem_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
