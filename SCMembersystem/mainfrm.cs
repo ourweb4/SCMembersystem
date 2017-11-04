@@ -699,5 +699,11 @@ namespace SCMembersystem
             var crpt = new countfrm();
             crpt.ShowDialog();
         }
+
+        private void registrationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var keyfrm = new keyfrm();
+            keyfrm.ShowDialog();
+        }
     }
 }

@@ -18,7 +18,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SCMembersystem.forms;
-
+using SKM.V3;
+using SKM.V3.Models;
+using SKM.V3.Internal;
 
 namespace SCMembersystem
 {
@@ -41,19 +43,26 @@ namespace SCMembersystem
 
         static void runprog()
         {
-            if (validate())
-            {
+    //        if (validate())
+       //     {
                 Application.Run(new mainfrm());
-            }
-            else
+         //   }
+           // else
             {
-                Application.Run(new keyfrm());
+          //      Application.Run(new keyfrm());
             }
         }
 
         static public bool validate()
         {
-            return true;
+            var lic = new LicenseKey().LoadFromFile("lic.key");
+
+            if (lic.IsValid() &&  lic.HasNotExpired().IsValid() )
+            {
+                return true;
+            }
+
+            return false;
 
         }
 

@@ -101,6 +101,7 @@
             this.accountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newMembersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fullMembersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.countMembersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fishingcheckBox = new System.Windows.Forms.CheckBox();
@@ -112,8 +113,8 @@
             this.activecheckBox = new System.Windows.Forms.CheckBox();
             this.commentsbut = new System.Windows.Forms.Button();
             this.detailsbut = new System.Windows.Forms.Button();
-            this.countMembersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataSet11 = new SCMembersystem.DataSets.DataSet1();
+            this.registrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.membersdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtypeBindingSource)).BeginInit();
@@ -734,10 +735,18 @@
             this.fullMembersToolStripMenuItem.Text = "Full Members";
             this.fullMembersToolStripMenuItem.Click += new System.EventHandler(this.fullMembersToolStripMenuItem_Click);
             // 
+            // countMembersToolStripMenuItem
+            // 
+            this.countMembersToolStripMenuItem.Name = "countMembersToolStripMenuItem";
+            this.countMembersToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.countMembersToolStripMenuItem.Text = "Count Members";
+            this.countMembersToolStripMenuItem.Click += new System.EventHandler(this.countMembersToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.registrationToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -745,7 +754,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About ...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -840,17 +849,17 @@
             this.detailsbut.UseVisualStyleBackColor = true;
             this.detailsbut.Click += new System.EventHandler(this.detailsbut_Click);
             // 
-            // countMembersToolStripMenuItem
-            // 
-            this.countMembersToolStripMenuItem.Name = "countMembersToolStripMenuItem";
-            this.countMembersToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.countMembersToolStripMenuItem.Text = "Count Members";
-            this.countMembersToolStripMenuItem.Click += new System.EventHandler(this.countMembersToolStripMenuItem_Click);
-            // 
             // dataSet11
             // 
             this.dataSet11.DataSetName = "DataSet1";
             this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // registrationToolStripMenuItem
+            // 
+            this.registrationToolStripMenuItem.Name = "registrationToolStripMenuItem";
+            this.registrationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.registrationToolStripMenuItem.Text = "Registration";
+            this.registrationToolStripMenuItem.Click += new System.EventHandler(this.registrationToolStripMenuItem_Click);
             // 
             // mainfrm
             // 
@@ -1014,6 +1023,7 @@
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem countMembersToolStripMenuItem;
         private DataSets.DataSet1 dataSet11;
+        private System.Windows.Forms.ToolStripMenuItem registrationToolStripMenuItem;
         //  private System.Windows.Forms.Button paybut;
     }
 }

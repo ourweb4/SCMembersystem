@@ -33,6 +33,7 @@
             this.keytxt = new System.Windows.Forms.TextBox();
             this.savebut = new System.Windows.Forms.Button();
             this.messkey = new System.Windows.Forms.Label();
+            this.dayslab = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -79,11 +80,20 @@
             this.messkey.Size = new System.Drawing.Size(0, 13);
             this.messkey.TabIndex = 4;
             // 
+            // dayslab
+            // 
+            this.dayslab.AutoSize = true;
+            this.dayslab.Location = new System.Drawing.Point(297, 221);
+            this.dayslab.Name = "dayslab";
+            this.dayslab.Size = new System.Drawing.Size(0, 13);
+            this.dayslab.TabIndex = 5;
+            // 
             // keyfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 261);
+            this.Controls.Add(this.dayslab);
             this.Controls.Add(this.messkey);
             this.Controls.Add(this.savebut);
             this.Controls.Add(this.keytxt);
@@ -104,5 +114,6 @@
         private System.Windows.Forms.TextBox keytxt;
         private System.Windows.Forms.Button savebut;
         private System.Windows.Forms.Label messkey;
+        private System.Windows.Forms.Label dayslab;
     }
 }
